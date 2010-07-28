@@ -1,0 +1,115 @@
+\section{Design}
+\label{sec:design}
+The design of the software was aligned to the given requirements and will be presented in the same order. In a conflating step, the given design deliberations are merged to an overall design.
+
+\subsection{Main requirements}
+\label{sec:main_req}
+A correct, well implemented and documented software that implements a method of parallelizing the search for patterns while exploiting the architecture of the Cell processor is the main goal of this project.
+
+\subsubsection{Parallel search patterns}
+\label{sec:parallel_search}
+
+\subsubsection{Cell processor exploitation}
+\label{sec:cell_exploit}
+
+\subsection{Additional requirements}
+\label{sec:additional_req}
+The project also gave the opportunity to discover various challenges in the field of computer science. They are the inheret basis of this project and were examined and solved, as set by the requirements. The first named basic points are A small survey of them is given hereafter.
+
+\subsubsection{Primality test}
+\label{sec:primality_test}
+A more theoretical problem is the primality test. It tests if a given number \emph{n} is a prime number, but does not lead to its prime factors and therefor is a bit faster than integer factorization. This tests applied to a list of all integers leads to a list of all primes and is therefore suitable to create an Ulam spiral. Probabilist test hold a chance for false positives, for their prove is restricted with a probability. An error within this probability may lead to unintended patterns in the Ulam spiral.
+
+The simplest primality test is brute force testing on all numbers up to \emph{n}, if \emph{n} is divisible by any of these numbers. A small improvement would be to  test just numbers $< \sqrt{n}$, because at least one of the factors of \emph{n} hast to be in this range.
+
+%A famous deterministic primality test is the "Adleman-Pomerance-Rumely primality test". It was later improved by Henri Cohen and Arjen Lenstra and can test primality of an integer n in time:
+    $(\log n)^{O(\log\,\log \,\log n)}$. 
+
+\paragraph{AKS primality test}
+The AKS primality test (also known as Agrawal-Kayal-Saxena primality test and cyclotomic AKS test) is a deterministic primality-proving algorithm and was published in \cite{primeisp}:
+
+\begin{quote}
+Input:\\
+\noindent\hspace*{12mm} integer n > 1.\\
+1. If (n = ab for a $\in$ N and b $>$ 1), output COMPOSITE.\\
+2. Find the smallest r such that or (n) $>$ log2 n.\\
+3. If 1 $<$ (a, n) $<$ n for some a $\leq$ r, output COMPOSITE.\\
+4. If n $\leq$ r, output PRIME.1\\
+5. For a = 1 to $\phi$(r) log n do\\
+   \noindent\hspace*{12mm} if ((X + a)n = X n + a (mod X r - 1, n)),\\
+   \noindent\hspace*{24mm}output COMPOSITE;\\
+6. Output PRIME;
+\end{quote}
+
+\paragraph{Sieve of Eratosthenes}
+An alternative way of generating all prime numbers is the so called "Sieve of Eratosthenes". It works efficient for smaller primes.
+
+From a list of all natural numbers $> 2$ the three following steps will reveal all prime numbers:
+
+\begin{itemize}%enumerate
+   \item The first number in the list is a prime
+   \item Strike this number and all multiples of the current number from the list
+   \item repeat  
+\end{itemize}%enumerate
+
+\paragraph{Miller-Rabin probabilistic primality test}
+The running time of this algorithm is $O(k log^{3} n)$, where k is the number of different values tested.
+
+
+\subsubsection{Number size}
+\label{sec:line_detection}
+As proven by Euclid, there are infinitive many prime numbers. To verify possible patterns, the large prime numbers are of special interest. Only if a regularity also holds with large numbers, it is of interest to proof this regularity mathematically.
+The prime number theorem (PNT) describes the asymptotic distribution of the prime numbers. The PNT, based on the formula of prime distribution by Gauss\cite{XXX}, gives an aproximation of the density of prime numbers. This density seems do decrease with larger numbers, as there are larger and larger prime gaps. This may confirm regularities and also may be conformed by found regularities.
+
+From the viewpoint of a programming language, big numbers are problems. In theory, every number is only restricted by the memory size that holds the number. In practice, the limiting factor is the standard which defines the representation of the number and the size of the smallest cache the number passes. This normally is limited to 32bit in old processor architectures and 64 bit in modern architectures like the PS3.
+
+For prime numbers, the problem only scales on the set of all positive natural numbers, which is quite smaller problem then simulating continuous numbers and handling discretisation errors. The  very common problem of large natural number handling is solved by various libraries, but has to be implemented with care. Buffer overflows on too small number ranges highly harm the result of the computation and have to be avoided.
+
+\subsubsection{Testing}
+\label{sec:tests}
+To have a basis on which the pattern searches may be performed, several changes to the original Ulam spiral were regarded:
+
+\begin{itemize}%enumerate
+   \item Starting number
+   \item Size of the space
+   \item Curve
+   \item Number sequence
+   \item Dimension of the curve   
+\end{itemize}%enumerate
+
+In rising complexity and time consumtion, the last two point were dropped to future works, but the starting number, the size of the space and another curve were implemented and testet.
+
+\subsubsection{Storage}
+\label{sec:concurrency}
+The architecture of the PS3 with its Synergistic Processing Elements (SPE) limit the amount of data that can be processed. 256KB embedded SRAM have to store the instructions and data.\cite{PTC}
+Large data has to be broken down to chunks of at most this size. Context switches and data reloads will slow down the process and keep the processor idle. An optimal data size will support constant data reloads to keep the processor busy. A rough aproximation of the instruction size, the time needed to move the data and a mechanism to detect an idleing SPE is needed to optimize the program.
+
+\subsection{Overall Design}
+\label{sec:overall_design}
+
+
+%\subsection{subsection}
+%\subsubsection{subsubsection}
+%\paragraph{paragraph}
+%\subparagraph{subparagraph}
+%List
+%\begin{itemize}%enumerate
+%	\item Punkt1
+%	\item Punkt2
+%\end{itemize}%enumerate
+
+%\graphic{label}{caption}
+
+%Ref to Picture:
+%(see:\ref{fig:XXX})
+
+%Table
+%\begin{table}[H]
+%\begin{longtable} {| l l  | }
+%\hline
+%Topic1		& Topic2 	\\ \hline
+%Cell1		& Cell2		\\
+%Cell1.1	& Cell2.1	\\
+%\hline
+%\end{longtable}
+%\end{table}
