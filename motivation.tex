@@ -1,0 +1,81 @@
+\section{Motivation}
+\label{sec:motivation}
+ The Electronic Frontier Foundation awarded \$100,000 for the first discovered prime number with at least 10,000,000 digits and the Great Internet Mersenne Prime Search ("GIMPS") won this prize in October 2009. \$100,000 and \$250,000 are awarded to the discovery of the first prime numbers with 100,000,000 and 1,000,000,000 decimal digits.\\
+Besides the monetary appeal, prime numbers have some fascinating aspects.
+Euclid has proven that there are infinitely many prime numbers, and the definition of the prime number:\\
+\begin{quotation}
+A prime number (or a prime) is a natural number that has exactly two distinct natural number divisors: 1 and itself.
+\end{quotation}
+From this definition, three consequences emerge:
+\begin{itemize}%enumerate
+   \item Primes can be represented as a product of two natural numbers greater than 1.
+   \item When a product of two natural numbers is divisible by a prime number, one of their factors is dividable by this prime number.
+   \item Every number has a unique factorization into prime numbers.   
+\end{itemize}%enumerate
+This integer factorization is the basis of every cryptographic application. Outside the informatics field, number theory and other parts of mathematic are concerned with primes, their distribution and special cases, and some of the unsolved problems in mathematics are linked to primes.
+
+
+\subsection{Implementation challenges}
+\label{sec:implementation_challenges}
+$2^{43,112,609}-1$ is the largest currently known prime number. Its discovery consumed 12 Years of continuous computing time with 29 trillion calculations per second and lead to 12,978,189 digits in decimal notation and was discovered by the Great Internet Mersenne Prime Search ("GIMPS").
+Computing with prime numbers in general isn't trivial. Their size easily exceeds normal integer limitations and the algorithms to find and prove them are hard. 
+
+\subsubsection{Primality test}
+\label{sec:primality_test}
+The primality test is a test to prove if a given number \emph{n} is a prime number, it does not lead to its prime factors and therefor is a bit faster than integer factorization. This tests applied to a list of all integers leads to a list of all primes and is therefore suitable to create an Ulam spiral. Probabilist test are inappropriate, for their prove is restricted with a probability. An error within this probability may lead to unintended patterns in the Ulam spiral. One famous of these test is the "Miller-Rabin primality test". The running time of this algorithm is $O(k log^{3} n)$, where k is the number of different values tested.\\
+The simplest primality test is brute force testing on all numbers up to \emph{n}, if \emph{n} is divisible by any of these numbers. A small improvement would be to  test just numbers $< \sqrt{n}$, because at least one of the factors of \emph{n} hast to be in this range.\\
+A famous deterministic primality test is the "Adleman-Pomerance-Rumely primality test". It was later improved by Henri Cohen and Arjen Lenstra and can test primality of an integer n in time:
+    $(\log n)^{O(\log\,\log \,\log n)}$. 
+\\
+The AKS primality test (also known as Agrawal-Kayal-Saxena primality test and cyclotomic AKS test) is a deterministic primality-proving algorithm and was published in \cite{primeinp}:
+
+\begin{quote}
+Input:\\
+\noindent\hspace*{12mm} integer n > 1.\\
+1. If (n = ab for a $\in$ N and b $>$ 1), output COMPOSITE.\\
+2. Find the smallest r such that or (n) $>$ log2 n.\\
+3. If 1 $<$ (a, n) $<$ n for some a $\leq$ r, output COMPOSITE.\\
+4. If n $\leq$ r, output PRIME.1\\
+5. For a = 1 to $\phi$(r) log n do\\
+   \noindent\hspace*{12mm} if ((X + a)n = X n + a (mod X r - 1, n)),\\
+   \noindent\hspace*{24mm}output COMPOSITE;\\
+6. Output PRIME;
+\end{quote}
+
+
+The above given primality test can also create all primes, if their input is a list of all natural numbers. This prime generation is also performed by the so called "Sieve of Eratosthenes". It works efficient for smaller primes.
+\\
+From a list of all natural numbers $> 2$ the three following steps will reveal all prime numbers:
+
+\begin{itemize}%enumerate
+   \item The first number in the list is a prime
+   \item Strike this number and all multiples of the current number from the list
+   \item repeat  
+\end{itemize}%enumerate
+
+Other issues regarding the implementation haven't been examined:
+
+\subsubsection{Line detection}
+\label{sec:line_detection}
+
+\subsubsection{Storage}
+\label{sec:storage}
+
+\subsubsection{Concurrency}
+\label{sec:concurrency}
+
+\subsection{Parameters}
+\label{sec:Parameters}
+\begin{itemize}%enumerate
+   \item Number Sequence
+   \item Starting Number
+   \item Curve
+   \item Size of the space
+   \item Dimension (?)   
+\end{itemize}%enumerate
+
+
+%\subsection{subsection}
+%\subsubsection{subsubsection}
+%\paragraph{paragraph}
+%\subparagraph{subparagraph}

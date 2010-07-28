@@ -1,0 +1,53 @@
+%including macros only
+%\let\footnote=\endnote
+\newcommand{\TODO}       [1]{\textbf{\emph{[TODO: #1]}}}
+
+%Graphic
+\newcommand{\graphic}[3]{
+\begin{figure}[H]
+\begin{center}
+   \includegraphics[width=#2cm]{graphics/#1.png}
+   \label{fig:#1}
+   \caption{#3}
+\end{center}
+\end{figure}
+}
+
+
+\newcommand{\boxit}[3]{
+\\
+\begin{figure} [H]
+	\begin{center}
+		\fbox{\parbox{12.5cm}{
+		\par
+		\begingroup
+		\leftskip=0.5cm
+		%\noindent
+		#1
+		\endgroup}}
+	\label{ref:#2}
+	\caption{#3}
+	\end{center}
+\end{figure}
+}
+
+%List
+%\begin{itemize}%enumerate
+%	\item Punkt1
+%	\item Punkt2
+%\end{itemize}%enumerate
+
+
+%Ref to Picture:
+%(see:\ref{fig:XXX})
+
+%Table
+%\begin{table}[H]
+%\begin{longtable} {| l l  | }
+%\hline
+%Topic1		& Topic2 	\\ \hline
+%Cell1		& Cell2		\\
+%Cell1.1	& Cell2.1	\\
+%\hline
+%\end{longtable}
+%\end{table}
