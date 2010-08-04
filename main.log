@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.6.3)  4 AUG 2010 20:47
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.6.3)  4 AUG 2010 21:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -375,42 +375,47 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 File: graphics/hilbert_curve.png Graphic file (type png)
 
 <use graphics/hilbert_curve.png> [7 <./graphics/hilbert_curve.png>]
-Overfull \hbox (17.45943pt too wide) in paragraph at lines 77--77
+<graphics/hilbertalgorithm.png, id=43, 284.56313pt x 255.95625pt>
+File: graphics/hilbertalgorithm.png Graphic file (type png)
+
+<use graphics/hilbertalgorithm.png>
+Overfull \hbox (17.45943pt too wide) in paragraph at lines 79--79
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--77
+Underfull \hbox (badness 10000) in paragraph at lines 70--79
 
  []
 
-) (./results.tex <graphics/ulamchart.png, id=43, 341.02406pt x 170.88844pt>
+) (./results.tex <graphics/ulamchart.png, id=44, 341.02406pt x 170.88844pt>
 File: graphics/ulamchart.png Graphic file (type png)
 
 <use graphics/ulamchart.png>
-<graphics/hilbertchart.png, id=44, 341.02406pt x 170.88844pt>
+<graphics/hilbertchart.png, id=45, 341.02406pt x 170.88844pt>
 File: graphics/hilbertchart.png Graphic file (type png)
 
-<use graphics/hilbertchart.png>
-<graphics/ulamprobs.png, id=45, 341.02406pt x 170.88844pt>
+<use graphics/hilbertchart.png> [8 <./graphics/hilbertalgorithm.png>]
+<graphics/ulamprobs.png, id=49, 341.02406pt x 170.88844pt>
 File: graphics/ulamprobs.png Graphic file (type png)
 
-<use graphics/ulamprobs.png> [8 <./graphics/ulamchart.png>]
-<graphics/hilbertprobs.png, id=49, 341.02406pt x 170.88844pt>
+<use graphics/ulamprobs.png>
+<graphics/hilbertprobs.png, id=50, 341.02406pt x 170.88844pt>
 File: graphics/hilbertprobs.png Graphic file (type png)
 
-<use graphics/hilbertprobs.png>) (./programusage.tex) (./conclusion.tex)
-[9 <./graphics/hilbertchart.png> <./graphics/ulamprobs.png> <./graphics/hilbert
-probs.png>] [10] (./main.bbl) [11] (./main.aux)
+<use graphics/hilbertprobs.png> [9 <./graphics/ulamchart.png> <./graphics/hilbe
+rtchart.png> <./graphics/ulamprobs.png>]) (./programusage.tex)
+(./conclusion.tex) [10 <./graphics/hilbertprobs.png>] (./main.bbl) [11]
+(./main.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3594 strings out of 495061
- 45619 string characters out of 1182622
- 106439 words of memory out of 3000000
- 6649 multiletter control sequences out of 15000+50000
+ 3600 strings out of 495061
+ 45796 string characters out of 1182622
+ 106452 words of memory out of 3000000
+ 6654 multiletter control sequences out of 15000+50000
  54906 words of font info for 61 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  30i,8n,25p,1037b,389s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -426,9 +431,9 @@ blic/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/sha
 re/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmtt10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam
 10.pfb>
-Output written on main.pdf (11 pages, 366392 bytes).
+Output written on main.pdf (11 pages, 371627 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
+ 106 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
