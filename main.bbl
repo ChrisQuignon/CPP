@@ -1,0 +1,26 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{AMP{\etalchar{+}}08}
+
+\bibitem[AKS02]{primeisp}
+Manindra Agrawal, Neeraj Kayal, and Nitin Saxena.
+\newblock Primes is in p.
+\newblock {\em Ann. of Math}, 2:781--793, 2002.
+
+\bibitem[AMP{\etalchar{+}}08]{PTC}
+Abraham Arevalo, Ricardo~M. Matinata, Maharaja Pandian, Eitan Peri, Kurtis
+  Ruby, Francois Thomas, and Chris Almond.
+\newblock {\em Programming the Cell Broadband Engine Architecture: Examples and
+  Best Practices}.
+\newblock IBM Redbooks, 2008.
+
+\bibitem[HACB]{MRVer}
+Brian~C. Higgins, Faculty Advisor, Mr. Charles, and L.~Burchard.
+\newblock The rabin- miller probabilistic primality test: Some results on the
+  number of non-witnesses to compositeness.
+
+\bibitem[Rab80]{MRPT}
+Michael~O. Rabin.
+\newblock Probabilistic algorithm for testing primality.
+\newblock {\em J. Number Theory}, 12(1):128--138, 1980.
+
+\end{thebibliography}

@@ -26,14 +26,16 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Primality test}{3}}
 \newlabel{sec:primality_test}{{2.2.1}{3}}
 \@writefile{toc}{\contentsline {paragraph}{AKS primality test}{3}}
+\@writefile{toc}{\contentsline {paragraph}{Sieve of Eratosthenes}{3}}
+\citation{MRPT}
+\citation{MRVer}
 \citation{XXX}
-\@writefile{toc}{\contentsline {paragraph}{Sieve of Eratosthenes}{4}}
+\citation{PTC}
 \@writefile{toc}{\contentsline {paragraph}{Miller-Rabin probabilistic primality test}{4}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Number size}{4}}
-\newlabel{sec:line_detection}{{2.2.2}{4}}
+\newlabel{sec:number_size}{{2.2.2}{4}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Testing}{4}}
 \newlabel{sec:tests}{{2.2.3}{4}}
-\citation{PTC}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.4}Storage}{5}}
 \newlabel{sec:concurrency}{{2.2.4}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Overall Design}{5}}
@@ -41,20 +43,39 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3}Implementation}{5}}
 \newlabel{sec:implementation}{{3}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Libraries}{5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Curve Creation}{5}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Primality Test}{5}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Spiral Algorithm}{5}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}Hilbert Curve}{5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Pattern Detection}{5}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Experimanetal Results}{5}}
-\newlabel{sec:results}{{4}{5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Sequencial execution}{5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Parallel execution}{5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Comparison}{5}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Program Usage}{5}}
-\newlabel{sec:usage}{{5}{5}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{5}}
-\newlabel{sec:conclusion}{{6}{5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}gmplib}{5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2}libbmp}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Space filling curves}{6}}
+\newlabel{sec:curves}{{3.2}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Primality Test}{6}}
+\newlabel{sec:prim_test}{{3.2.1}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Spiral Algorithm}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}Hilbert Curve}{7}}
+\newlabel{fig:hilbert_curve}{{3.2.3}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Three Iteration of the Hilbert curve.}}{7}}
+\newlabel{ref:hilbert_grammar}{{3.2.3}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Derivation of 3 iterations of the Hilbert curve.}}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Pattern Detection}{8}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Experimanetal Results}{8}}
+\newlabel{sec:results}{{4}{8}}
+\newlabel{fig:ulamchart}{{4}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Performance of the serial Ulam spiral.}}{8}}
+\newlabel{fig:hilbertchart}{{4}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Performance of the serial Hilbert curve.}}{9}}
+\newlabel{fig:ulamprobs}{{4}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Probabilities within the Ulam spiral.}}{9}}
+\newlabel{fig:hilbertprobs}{{4}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Probabilities within the the Hilbert curve.}}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Sequencial execution}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Parallel execution}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Comparison}{10}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Program Usage}{10}}
+\newlabel{sec:usage}{{5}{10}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{10}}
+\newlabel{sec:conclusion}{{6}{10}}
 \bibdata{bib}
 \bibcite{primeisp}{AKS02}
+\bibcite{PTC}{AMP{$^{+}$}08}
+\bibcite{MRVer}{HACB}
+\bibcite{MRPT}{Rab80}
 \bibstyle{alpha}
