@@ -7,7 +7,7 @@
 \newcommand{\graphic}[3]{
 \begin{figure}[H]
 \begin{center}
-   \includegraphics[width=#2cm]{graphics/#1.png}
+   \includegraphics[#2]{graphics/#1.png}
    \label{fig:#1}
    \caption{#3}
 \end{center}
@@ -25,7 +25,6 @@
 \newcommand{\tl}{$\vartriangleleft$}
 
 \newcommand{\boxit}[3]{
-\\
 \begin{figure} [H]
 	\begin{center}
 		\fbox{\parbox{12.5cm}{
@@ -33,9 +32,10 @@
 		\begingroup
 		\leftskip=0.5cm
 		%\noindent
+		\hskip 10 pt
 		#1
 		\endgroup}}
-	\label{ref:#2}
+	\label{#2}
 	\caption{#3}
 	\end{center}
 \end{figure}

@@ -1,5 +1,7 @@
 \section{Implementation}
 \label{sec:implementation}
+Sadly it was not possible to create a proper parallel implementation of the project in the given time, i will however present the results of the serial version. The problems and challenges are presented in the last subsection.
+
 \subsection{Libraries}
 This section highlights all libraries used in this project. Besides the standard library for exploiting the cell processor, two additional libraries were used. One to handle the bmp file which holds the generated data and one to handle large numbers.
 
@@ -40,7 +42,7 @@ As described in section \ref{sec:primality_test}, the primality test is highly i
 The algorithm to align the prime numbers in a spiral around the center of the bitmap is fairly simple. At first, the center has to be determined and set. To actually have a center represented by a pixel, the bitmap height and width has to be odd. With every iteration of the algorithm one additional circumnavigation is done. By starting in one direction the first and second line - which lies rectangular to the first - have the length of one. The next two lines that continue the spiral in the same direction - either clockwise or counter clockwise - have one additional pixel. This pixel is the center that has not been passed by the first two lines. After these 4 line have been drawn, the length of the next line is also increased by one. In a two dimensional space the four rectangular direction have also been passed, thus the spiral is now facing in the very same direction as at the beginning. The algorithm now repeats until the calculated amount of iteration or wished pixed have been passed.
 
 \subsubsection{Hilbert Curve}
-\graphic{hilbert_curve}{10.5}{Three Iteration of the Hilbert curve.}
+\graphic{hilbert_curve}{width=10.5cm}{Three Iteration of the Hilbert curve.}
 The Hilbert curve is 2 dimensional, continuous and recursive, but restricted to space sizes of $2^{n}$. The curves can be spaced to higher dimensions.
 
 To understand the algorithm for the Hilbert curve it is crucial to envision the derivations and changes between the single steps of the Hilbert curve. One iteration of the Hilbert curve passes a two by two pixel grid with the origin at the lower left pixel in this order: (0, 0), (1, 0), (1, 1), (0, 1). This is done by the transition of the given Axis (X, Y), starting at (0, 0) in this order: (+1, --), (-- , +1), (-1, --). These pixel scale transition are represented by a triangle facing in the direction to which the transition is done (\tt, \tl, \tb, \tr). So for traversing 4 pixels three transition were made.
@@ -65,7 +67,7 @@ If the Hilbert curve is done with several iterations, the transition of the open
 
 Thus, the Hilbert curve is described as a grammar where the open squares are nonterminals and the triangles are terminals. However, the information of how often the nonterminal have to be exchanged has to be set globally and marks the number of iterations.
 
-\graphic{hilbertalgorithm}{8}{Two Iteration of the Hilbert curve grammar in tree form.}
+\graphic{hilbertalgorithm}{width=8cm}{Two Iteration of the Hilbert curve grammar in tree form.}
 
 Thus a Hilbert curve of 3 iterations in generated as follows:
 \boxit{
@@ -81,8 +83,15 @@ Thus a Hilbert curve of 3 iterations in generated as follows:
 Similar grammars can be done for other space filling curves.
 
 \subsection{Pattern Detection}
+\label{sec:pattern}
+The identification of lines within the Ulam spiral and other traversions of the prime number sequence is set as a goal of this report. It is necessary to give numbers to the fact that one can see lines in the pattern. For further studies of the prime number sequence the identification of these lines can assist improved primality test that rely on the mathematical functions of the lines found in the ulam spiral.
+At first it is necessary to get an idea of what these seen lines mean in a mathematical way. The vector through a picture can be described as a mathematical function or an algorithm that traverses this vector. In the ulam spiral these vectors lay at multiples of 45° to the basis of the picture.
+If one of this vectores can be identified by the eye it means that there are significantly more points on this vector than on the others. It also may be that the closes parallel vector to the seen one have significant less points and therefor the seen one has a high contrast.
+It is difficult to identify these line with pattern detection algorithms from the field of image processing. There one can find a variety of edge detection algorithms like the laplace filter or the sobel operator. These algorithm rely on continuour lines and blur the original image. This is not as precise and reliable to enable further utilization.
+The given implementation give a probability for every vector. So every vector has a statistic value that aproximate the probability that a given point on this vector is prime number or not. The cummulation of several crossing vector then can produce an even more accurate probability that a point represents a prime or not.
+For small images or at the edges of an image where a 45° vector just holds few values this probability of course is inacurate and has to be discarded. However it was possible to clearly locate high propability vectors within the images. The corresponding figures can be found in section \ref{sec:results}.
 
-
+\subsection{Difficulties in the parallel version}
 
 
 %\subsectioncd {subsection}

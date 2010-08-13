@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.6.3)  4 AUG 2010 21:35
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.6.3)  13 AUG 2010 13:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**main.tex
+**main
 (./main.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
@@ -236,83 +236,101 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks24
 \@floatcapt=\box29
 )
+(/usr/share/texmf-texlive/tex/latex/tools/longtable.sty
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip46
+\LTright=\skip47
+\LTpre=\skip48
+\LTpost=\skip49
+\LTchunksize=\count110
+\LTcapwidth=\dimen116
+\LT@head=\box30
+\LT@firsthead=\box31
+\LT@foot=\box32
+\LT@lastfoot=\box33
+\LT@cols=\count111
+\LT@rows=\count112
+\c@LT@tables=\count113
+\c@LT@chunks=\count114
+\LT@p@ftn=\toks25
+)
 \@input{includes.aux}
 \openout2 = `includes.aux'.
 
 (./includes.tex)
-Package csquotes Info: Adjusting default style on input line 21.
+Package csquotes Info: Adjusting default style on input line 22.
 Package csquotes Info: Redefining alias 'default' -> 'UKenglish' on input line 
-21.
+22.
  (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 22.
  (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count110
-\scratchdimen=\dimen116
-\scratchbox=\box30
-\nofMPsegments=\count111
-\nofMParguments=\count112
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count113
-\MPscratchDim=\dimen117
-\MPnumerator=\count114
-\everyMPtoPDFconversion=\toks26
+\scratchcounter=\count115
+\scratchdimen=\dimen117
+\scratchbox=\box34
+\nofMPsegments=\count116
+\nofMParguments=\count117
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count118
+\MPscratchDim=\dimen118
+\MPnumerator=\count119
+\everyMPtoPDFconversion=\toks27
 )
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 30.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 31.
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 30.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 31.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 30.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 31.
 
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 30.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 31.
 
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 30.
+(Font)              <12> on input line 31.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 30.
+(Font)              <8> on input line 31.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 30.
-LaTeX Font Info:    Try loading font information for U+lasy on input line 30.
+(Font)              <6> on input line 31.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 31.
 
 (/usr/share/texmf-texlive/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 30.
+LaTeX Font Info:    Try loading font information for U+msa on input line 31.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 30.
+LaTeX Font Info:    Try loading font information for U+msb on input line 31.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -349,25 +367,26 @@ File: graphics/ulam_spiral_numbers.png Graphic file (type png)
 <graphics/ulam_400_400.png, id=12, 96.36pt x 96.36pt>
 File: graphics/ulam_400_400.png Graphic file (type png)
 
-<use graphics/ulam_400_400.png>) (./design.tex [2 <./graphics/ulam_spiral_numbe
-rs.png> <./graphics/ulam_400_400.png (PNG copy)>]
+<use graphics/ulam_400_400.png> [2 <./graphics/ulam_spiral_numbers.png> <./grap
+hics/ulam_400_400.png (PNG copy)>]) (./design.tex
 Overfull \hbox (1.52492pt too wide) in paragraph at lines 7--8
 \T1/lmr/m/n/10 A cor-rect, well im-ple-mented and doc-u-mented soft-ware that i
 m-ple-ments a method
  []
 
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 50.
-(/usr/share/texmf/tex/latex/lm/omslmr.fd
+[3]
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 54.
+ (/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 50.
- [3]
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 54.
 
-LaTeX Warning: Citation `XXX' on page 4 undefined on input line 61.
+
+LaTeX Warning: Citation `XXX' on page 4 undefined on input line 65.
 
 [4]) (./implementation.tex
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 12.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 14.
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [5]
@@ -379,46 +398,68 @@ File: graphics/hilbert_curve.png Graphic file (type png)
 File: graphics/hilbertalgorithm.png Graphic file (type png)
 
 <use graphics/hilbertalgorithm.png>
-Overfull \hbox (17.45943pt too wide) in paragraph at lines 79--79
+Overfull \hbox (17.45943pt too wide) in paragraph at lines 81--81
  [] 
  []
 
+[8 <./graphics/hilbertalgorithm.png>]) (./results.tex
+<graphics/alltime.png, id=47, 341.02406pt x 227.34938pt>
+File: graphics/alltime.png Graphic file (type png)
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--79
-
- []
-
-) (./results.tex <graphics/ulamchart.png, id=44, 341.02406pt x 170.88844pt>
-File: graphics/ulamchart.png Graphic file (type png)
-
-<use graphics/ulamchart.png>
-<graphics/hilbertchart.png, id=45, 341.02406pt x 170.88844pt>
-File: graphics/hilbertchart.png Graphic file (type png)
-
-<use graphics/hilbertchart.png> [8 <./graphics/hilbertalgorithm.png>]
-<graphics/ulamprobs.png, id=49, 341.02406pt x 170.88844pt>
+<use graphics/alltime.png>
+<graphics/ulamprobs.png, id=48, 341.02406pt x 227.34938pt>
 File: graphics/ulamprobs.png Graphic file (type png)
 
-<use graphics/ulamprobs.png>
-<graphics/hilbertprobs.png, id=50, 341.02406pt x 170.88844pt>
+<use graphics/ulamprobs.png> [9]
+<graphics/hilbertprobs.png, id=52, 341.02406pt x 227.34938pt>
 File: graphics/hilbertprobs.png Graphic file (type png)
 
-<use graphics/hilbertprobs.png> [9 <./graphics/ulamchart.png> <./graphics/hilbe
-rtchart.png> <./graphics/ulamprobs.png>]) (./programusage.tex)
-(./conclusion.tex) [10 <./graphics/hilbertprobs.png>] (./main.bbl) [11]
-(./main.aux)
+<use graphics/hilbertprobs.png>
+<graphics/ncurveprobs.png, id=53, 341.02406pt x 227.34938pt>
+File: graphics/ncurveprobs.png Graphic file (type png)
+
+<use graphics/ncurveprobs.png> [10 <./graphics/alltime.png> <./graphics/ulampro
+bs.png>] <graphics/ulam251.png, id=57, 251.94125pt x 251.94125pt>
+File: graphics/ulam251.png Graphic file (type png)
+
+<use graphics/ulam251.png>
+<graphics/ncurve243.png, id=58, 243.91125pt x 243.91125pt>
+File: graphics/ncurve243.png Graphic file (type png)
+
+<use graphics/ncurve243.png> [11 <./graphics/hilbertprobs.png> <./graphics/ncur
+veprobs.png>] <graphics/hilbert128.png, id=62, 128.48pt x 128.48pt>
+File: graphics/hilbert128.png Graphic file (type png)
+
+<use graphics/hilbert128.png>
+Overfull \hbox (6.58986pt too wide) in alignment at lines 48--48
+ [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (6.58986pt too wide) in alignment at lines 48--48
+ [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (17.45943pt too wide) in paragraph at lines 48--48
+ [] 
+ []
+
+[12 <./graphics/ulam251.png (PNG copy)> <./graphics/ncurve243.png (PNG copy)> <
+./graphics/hilbert128.png (PNG copy)>]) (./programusage.tex) (./conclusion.tex)
+[13] (./main.bbl) [14] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3600 strings out of 495061
- 45796 string characters out of 1182622
- 106452 words of memory out of 3000000
- 6654 multiletter control sequences out of 15000+50000
+ 3712 strings out of 495061
+ 47265 string characters out of 1182622
+ 114333 words of memory out of 3000000
+ 6759 multiletter control sequences out of 15000+50000
  54906 words of font info for 61 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 30i,8n,25p,1037b,389s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,8n,25p,1033b,389s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/s
 hare/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm
@@ -431,9 +472,9 @@ blic/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/sha
 re/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmtt10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam
 10.pfb>
-Output written on main.pdf (11 pages, 371627 bytes).
+Output written on main.pdf (14 pages, 470672 bytes).
 PDF statistics:
- 106 PDF objects out of 1000 (max. 8388607)
+ 119 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

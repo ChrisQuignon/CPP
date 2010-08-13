@@ -2,12 +2,12 @@
 \contentsline {section}{\numberline {1}Introduction}{2}
 \contentsline {section}{\numberline {2}Design}{3}
 \contentsline {subsection}{\numberline {2.1}Main requirements}{3}
-\contentsline {subsubsection}{\numberline {2.1.1}Parallel search patterns}{3}
+\contentsline {subsubsection}{\numberline {2.1.1}Parallel pattern searching}{3}
 \contentsline {subsubsection}{\numberline {2.1.2}Cell processor exploitation}{3}
 \contentsline {subsection}{\numberline {2.2}Additional requirements}{3}
 \contentsline {subsubsection}{\numberline {2.2.1}Primality test}{3}
 \contentsline {paragraph}{AKS primality test}{3}
-\contentsline {paragraph}{Sieve of Eratosthenes}{3}
+\contentsline {paragraph}{Sieve of Eratosthenes}{4}
 \contentsline {paragraph}{Miller-Rabin probabilistic primality test}{4}
 \contentsline {subsubsection}{\numberline {2.2.2}Number size}{4}
 \contentsline {subsubsection}{\numberline {2.2.3}Testing}{4}
@@ -19,12 +19,13 @@
 \contentsline {subsubsection}{\numberline {3.1.2}libbmp}{5}
 \contentsline {subsection}{\numberline {3.2}Space filling curves}{6}
 \contentsline {subsubsection}{\numberline {3.2.1}Primality Test}{6}
-\contentsline {subsubsection}{\numberline {3.2.2}Spiral Algorithm}{6}
+\contentsline {subsubsection}{\numberline {3.2.2}Spiral Algorithm}{7}
 \contentsline {subsubsection}{\numberline {3.2.3}Hilbert Curve}{7}
 \contentsline {subsection}{\numberline {3.3}Pattern Detection}{9}
-\contentsline {section}{\numberline {4}Experimanetal Results}{9}
-\contentsline {subsection}{\numberline {4.1}Sequencial execution}{10}
-\contentsline {subsection}{\numberline {4.2}Parallel execution}{10}
-\contentsline {subsection}{\numberline {4.3}Comparison}{10}
-\contentsline {section}{\numberline {5}Program Usage}{10}
-\contentsline {section}{\numberline {6}Conclusion}{10}
+\contentsline {subsection}{\numberline {3.4}Difficulties in the parallel version}{9}
+\contentsline {section}{\numberline {4}Experimental Results}{9}
+\contentsline {subsection}{\numberline {4.1}Sequencial execution}{13}
+\contentsline {subsection}{\numberline {4.2}Parallel execution}{13}
+\contentsline {subsection}{\numberline {4.3}Comparison}{13}
+\contentsline {section}{\numberline {5}Program Usage}{13}
+\contentsline {section}{\numberline {6}Conclusion}{13}

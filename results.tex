@@ -1,11 +1,69 @@
-\section{Experimanetal Results}
+\section{Experimental Results}
 \label{sec:results}
-\graphic{ulamchart}{9}{Performance of the serial Ulam spiral.}
-\graphic{hilbertchart}{9}{Performance of the serial Hilbert curve.}
-\graphic{ulamprobs}{9}{Probabilities within the Ulam spiral.}
-\graphic{hilbertprobs}{9}{Probabilities within the the Hilbert curve.}
+The 
+\subsection{Prime number probability}
+\label{sec:resprob}
+As a byproduct of this project, some data about the probability of prime numbers on vectors in space filling curves was produced. The discoveries shall be just presented and not discussed in detail. This will be the task of others. At first i present a medium size image for every alignment algorithm implemented to give a visual idea. The images are produced with the software. The Hilbert and the N curve start at the upper left corner the Ulam spiral in the middle. The calling parameters were 250 for the size, which lead to the given actual sizes and 1 for the initial prime number.
+\graphic{ulam251}{width=5cm}{A 251 x 251 Ulam spiral.}
+\graphic{ncurve243}{width=5cm}{Primes aligned on a 243 x 241 N curve.}
+\graphic{hilbert128}{width=5cm}{Primes aligned to a 128 x 128 Hilbert curve.}
+
+As seen on these images, we expect 3 different outcomes for the probabilistic interpretation of these images. The order of the pobabilities is irrelevant. We do not seek for dependencies between to flanking voctors. Therefore a nominal scale is chosen. As stated before, the values at the very left and very right are not relevant and therefore the horizontal an vertical vectors are centered. Their size is constant and they do not have small nominators.
+In all four images a clear destinction between the skew and the rectangular vector can be made. The rectangular vectors have a lower average probability and a smaller range. This might be a systematic appearance or an accordance of the three alignment algorithm which can not be assessed here.
+
+\graphic{ulamprobs}{scale=1}{Probabilities within the Ulam spiral.}
+The Ulam spiral holds no new information. It is used as a reference to the other two images. The lines one can see in the image are the high striking values above 20\%. Besides these values the distibution is quite homogeneous with a large range rang of appering percentage values. In larger pictures some lines appear to be horizontal an vertical. These lines are more likely to appear in the center. This can also be confirmed in the probabilistic analysis. There is a peak at the center of the horizontal and vertical vectors.
+
+\graphic{hilbertprobs}{scale=1}{Probabilities within the the Hilbert curve.}
+The image of the Hilbert reveals no prominent lines. The probability analysis also is quite homogeneous but the range of found percentage values is more dense. No peeks in any direction here simply means no lines in the image.
+
+\graphic{ncurveprobs}{scale=1}{Probabilities within the the N curve.}
+THe probabillistic distribution of the N curve is quite similar to the one of the Hilbert Curve. its density is a little lower, but there are no extreme values in the middle. The N curve image clearly reveals vertical lines which in fact are "empty lines" where no prime number can be found. I suppose this is because of the very nature of the N curve which traverses the space not from a corner but in horizontal lines. The distance between to points does not correspond with a small number difference as it is case with the other two space filling curves.
+These empty lines are not very obvious in the distribution graph. They are in fact excluded for surveyance reasons. On all graphs there are values of zero and they are in fact too much to plot in a meaningful way. The only way to recognize this is the comparison of the plotted point in the Ulam spiral and the N curve. The Ulam spiral has an actual size of 251 x 251 px and the N curve is 243 x 243 px. Therefore both probabilistic distribution should have the same amount of plotted spots. However the Ulam spiral seems to have a lot more. The difference of plottet spots is roughly the amount of empty vectors in the N curve.
+
+Other observation like the higher probabilities on the right side and the higher prime number density at the curve origin can be axplained by the very nature of the curves or prime numbers but have to be omit here.
+
+\graphic{alltime}{scale=1}{Performance of the serial program.}
+The performance scaling graph of the program was made before the design decisions of the parallel version. It is quite common graph that indicates slightly growing additional computation overhead in relation to the growth of input. This will change drastically if the primality test is replaced with a non probabilistic version.
 
 \subsection{Sequencial execution}
+\label{sec:seq_ex}
+
+\boxit{
+\ttfamily
+
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+\begin{longtable} {r r r r r r l}
+  \%  & cumulative&    self&         &     self&     total& \\%           
+ time &  seconds &  seconds&    calls&   s/call&   s/call&  name    \\%
+ 21.49&      1.76&     1.76&        3&     0.59&     0.59&  bmp\_malloc\\%\_pixels
+ 13.92&      2.90&     1.14&        3&     0.38&     0.38&  prob45deg\\%
+ 13.68&      4.02&     1.12&        3&     0.37&     0.37&  prob0deg\\%
+ 12.94&      5.08&     1.06&        3&     0.35&     0.35&  prob135deg\\%
+  9.22&      5.83&     0.76& 52261913&     0.00&     0.00&  bmp\_set\_pix\\%el
+  6.84&      6.39&     0.56&        3&     0.19&     0.19&  prob90deg\\%
+  5.37&      6.83&     0.44&        1&     0.44&     0.67&  spiral\\%
+  5.31&      7.27&     0.43&        1&     0.43&     0.58&  hilbert\\%
+  4.52&      7.64&     0.37& 49133184&     0.00&     0.00&  markprime\\%
+  3.79&      7.95&     0.31&         &         &         &  main\\%
+  1.71&      8.09&     0.14& 49144720&     0.00&     0.00&  bmp\_get\_hei\\%ght
+  1.04&      8.18&     0.09&        1&     0.09&     0.13&  ncurve\\%
+  0.18&      8.19&     0.01&         &         &         &  \_is\_big\_end\\%ian
+   0.00&      8.19&     0.00&    11537&     0.00&     0.00&  bmp\_get\_wid\\%th
+  0.00&      8.19&     0.00&        6&     0.00&     0.00&  uint32\_pow\\%
+  0.00&      8.19&     0.00&        3&     0.00&     0.59&  bmp\_create\\%
+  0.00&      8.19&     0.00&        3&     0.00&     0.00&  bmp\_create\\%\_standard\_color\_table
+  0.00&      8.19&     0.00&        3&     0.00&     0.00&  bmp\_malloc\\%\_colors
+  0.00&      8.19&     0.00&        3&     0.00&     1.29&  probs\\%
+  0.00&      8.19&     0.00&        1&     0.00&     0.00&  bmp\_destroy\\%
+  0.00&      8.19&     0.00&        1&     0.00&     0.00&  bmp\_free\_co\\%lors
+  0.00&      8.19&     0.00&        1&     0.00&     0.00&  bmp\_free\_pi\\%xels
+%CALL: 250, 600, 2100, 5250 - all algorithms, no file safe
+\end{longtable}}{fig:gprofoutput}{Gprof output for the serial version of a 2100x 2100 px Ulam spiral.}
+
+
 
 \subsection{Parallel execution}
 
