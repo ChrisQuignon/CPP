@@ -13,10 +13,26 @@ Abraham Arevalo, Ricardo~M. Matinata, Maharaja Pandian, Eitan Peri, Kurtis
   Best Practices}.
 \newblock IBM Redbooks, 2008.
 
+\bibitem[BCC{\etalchar{+}}08]{BS08}
+Shrivathsa Bhargav, Jonathan Chen, Larry Chen, Thomas John, and Jaime
+  Peretzman.
+\newblock H.264 encoding on the cell processor.
+\newblock Elen e6900 project report, Columbia University, 2008.
+
+\bibitem[GKM82]{gprof}
+Susan~L. Graham, Peter~B. Kessler, and Marshall~K. McKusick.
+\newblock gprof: a call graph execution profiler, 1982.
+
 \bibitem[HACB]{MRVer}
 Brian~C. Higgins, Faculty Advisor, Mr. Charles, and L.~Burchard.
 \newblock The rabin- miller probabilistic primality test: Some results on the
   number of non-witnesses to compositeness.
+
+\bibitem[Qui10]{self}
+Christophe Quignon.
+\newblock Software parallelization - lessons learned from h.264 encoding on the
+  cell processor.
+\newblock Seminar essay, 2010.
 
 \bibitem[Rab80]{MRPT}
 Michael~O. Rabin.

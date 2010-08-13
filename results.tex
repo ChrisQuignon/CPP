@@ -1,14 +1,24 @@
 \section{Experimental Results}
 \label{sec:results}
-The 
+The results of the project and the topic it had are represented here.
+
 \subsection{Prime number probability}
 \label{sec:resprob}
-As a byproduct of this project, some data about the probability of prime numbers on vectors in space filling curves was produced. The discoveries shall be just presented and not discussed in detail. This will be the task of others. At first i present a medium size image for every alignment algorithm implemented to give a visual idea. The images are produced with the software. The Hilbert and the N curve start at the upper left corner the Ulam spiral in the middle. The calling parameters were 250 for the size, which lead to the given actual sizes and 1 for the initial prime number.
-\graphic{ulam251}{width=5cm}{A 251 x 251 Ulam spiral.}
-\graphic{ncurve243}{width=5cm}{Primes aligned on a 243 x 241 N curve.}
-\graphic{hilbert128}{width=5cm}{Primes aligned to a 128 x 128 Hilbert curve.}
+As a byproduct of this project, some data about the probability of prime numbers on vectors in space filling curves was produced. The discoveries shall be just presented and not discussed in detail. This will be the task of others. At first i present a medium size image for every alignment algorithm implemented to give a visual idea. The images are produced with the software. The Hilbert and the N curve start at the upper left corner the Ulam spiral in the middle. The calling parameters were 250 for the size, which lead to the given actual sizes and 1 for the initial prime number. The image of the Ulam spiral can be seen in figure \ref{fig:ulam251}.
 
-As seen on these images, we expect 3 different outcomes for the probabilistic interpretation of these images. The order of the pobabilities is irrelevant. We do not seek for dependencies between to flanking voctors. Therefore a nominal scale is chosen. As stated before, the values at the very left and very right are not relevant and therefore the horizontal an vertical vectors are centered. Their size is constant and they do not have small nominators.
+\begin{figure}[H]
+\begin{minipage}[t]{0.475\textwidth}
+\centering
+    \graphic{ncurve243}{width=5cm}{Primes aligned on a 243 x 241 N curve.} 
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.475\textwidth}
+\centering
+   \graphic{hilbert128}{width=5cm}{Primes aligned to a 128 x 128 Hilbert curve.}
+\end{minipage}
+\end{figure}
+
+As seen on these images, we expect three different outcomes for the probabilistic interpretation of these images. The order of the pobabilities is irrelevant. We do not seek for dependencies between to flanking voctors. Therefore a nominal scale is chosen. As stated before, the values at the very left and very right are not relevant and therefore the horizontal an vertical vectors are centered. Their size is constant and they do not have small nominators. Even if the exact point and values can not be retrieved by this representation, for the short interpretation one can get a good idea about the situation.
 In all four images a clear destinction between the skew and the rectangular vector can be made. The rectangular vectors have a lower average probability and a smaller range. This might be a systematic appearance or an accordance of the three alignment algorithm which can not be assessed here.
 
 \graphic{ulamprobs}{scale=1}{Probabilities within the Ulam spiral.}
@@ -23,11 +33,14 @@ These empty lines are not very obvious in the distribution graph. They are in fa
 
 Other observation like the higher probabilities on the right side and the higher prime number density at the curve origin can be axplained by the very nature of the curves or prime numbers but have to be omit here.
 
-\graphic{alltime}{scale=1}{Performance of the serial program.}
+\graphic{alltime}{width=9cm}{Performance of the serial program.}
 The performance scaling graph of the program was made before the design decisions of the parallel version. It is quite common graph that indicates slightly growing additional computation overhead in relation to the growth of input. This will change drastically if the primality test is replaced with a non probabilistic version.
 
 \subsection{Sequencial execution}
 \label{sec:seq_ex}
+Afther the implementation of the sequencial version of the software a representative execution was profiled to determine a most effective parallelisation stragtegy. The general parallelisation Design as described in sectione \ref{sec:paralleldesign} was refined by these results to optimize the speedup in the parallel version.
+The profiling was done with \emph{gprof}, which tracks the time spent in a function and the number of calls of every function. More information can be found at \cite{gprof}.
+The output of this profiling is as follows:
 
 \boxit{
 \ttfamily
@@ -51,7 +64,7 @@ Each sample counts as 0.01 seconds.
   1.71&      8.09&     0.14& 49144720&     0.00&     0.00&  bmp\_get\_hei\\%ght
   1.04&      8.18&     0.09&        1&     0.09&     0.13&  ncurve\\%
   0.18&      8.19&     0.01&         &         &         &  \_is\_big\_end\\%ian
-   0.00&      8.19&     0.00&    11537&     0.00&     0.00&  bmp\_get\_wid\\%th
+  0.00&      8.19&     0.00&    11537&     0.00&     0.00&  bmp\_get\_wid\\%th
   0.00&      8.19&     0.00&        6&     0.00&     0.00&  uint32\_pow\\%
   0.00&      8.19&     0.00&        3&     0.00&     0.59&  bmp\_create\\%
   0.00&      8.19&     0.00&        3&     0.00&     0.00&  bmp\_create\\%\_standard\_color\_table
@@ -61,13 +74,19 @@ Each sample counts as 0.01 seconds.
   0.00&      8.19&     0.00&        1&     0.00&     0.00&  bmp\_free\_co\\%lors
   0.00&      8.19&     0.00&        1&     0.00&     0.00&  bmp\_free\_pi\\%xels
 %CALL: 250, 600, 2100, 5250 - all algorithms, no file safe
-\end{longtable}}{fig:gprofoutput}{Gprof output for the serial version of a 2100x 2100 px Ulam spiral.}
+\end{longtable}}{fig:gprofoutput}{Gprof output for the serial version.}
 
-
+Noteworthy information from this is that the two of the three alignment algorithms \emph{spiral} and \emph{hilbert} take aproximately the same time where \emph{ncurve} is faster. Also the four vector probability fundctions \emph{prob0deg} - \emph{prob135deg} take some time where \emph{prob90deg} is faster than the others. The time spend in memory allocation \emph{malloc} is reasonable but may be optimized in the parallel version. This is taken in account especially with the two dimensional arrays as described in \ref{sec:paralleldesign}.
+Less expected were the functions \emph{bmp\_get\_hei[ght]} and \emph{bmp\_set\_pix[el]}. A look into the \emph{libbmp} revealed that these function were dependently to \emph{markprime} which is called to set prime pixels white. Whenever a pixel is set the height and width of the bmp is retrieved to navigate to the pixels position. This could be optimized by rewriting the \emph{libbmp} but was not discarded in respect to the projects scope.
 
 \subsection{Parallel execution}
+\label{sec:par_ex}
+% These aspects include data transfer and data alignement.
+% 2d array
+% pixel size
 
 \subsection{Comparison}
+Since the parallel version does not work properly, a comparison of the serial and parallel version as intended is not possible.
 
 %\subsection{subsection}
 %\subsubsection{subsubsection}
