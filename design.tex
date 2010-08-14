@@ -6,15 +6,17 @@ The design of the software was aligned to the given requirements and will be pre
 \label{sec:main_req}
 A correct, well implemented and documented software that implements a method of parallelizing the search for patterns while exploiting the architecture of the Cell processor is the main goal of this project.
 
-\subsubsection{Parallel pattern searching}
+\subsubsection{Parallel pattern detection}
 \label{sec:parallel_search}
-The identification of probability vectors within the prime number traversion is discussed in detail in section \ref{sec:pattern}. Here i will explain how this search is designed for the parallel implementation.
-
-
-
+The identification of probability vectors within the prime number traversion is discussed in detail in section \ref{sec:pattern}. Here i will explain how this identification is designed for the parallel implementation.
 
 \subsubsection{Cell processor exploitation}
 \label{sec:cell_exploit}
+
+\cite{cellguide}
+
+
+
 
 \subsection{Additional requirements}
 \label{sec:additional_req}
@@ -87,11 +89,11 @@ In rising complexity and time consumption, the last two point were dropped to fu
 The architecture of the PS3 with its Synergistic Processing Elements (SPE) limit the amount of data that can be processed. 256KB embedded SRAM have to store the instructions and data.\cite{PTC}
 Large data has to be broken down to chunks of at most this size. Context switches and data reloads will slow down the process and keep the processor idle. An optimal data size will support constant data reloads to keep the processor busy. A rough approximation of the instruction size, the time needed to move the data and a mechanism to detect an idling SPE is needed to optimize the program.
 
-\subsection{Sequencial design}
+\subsection{Sequential design}
 \label{sec:serial_design}
 This section will explain in detail how the serial version of the software works.
-At first the input parameters are checked if they can be transformed to correct invocation parameters. If this fails the program will promt a small error message that informs how to set up the parameters correrct and then exit.
-The invocing parameters are:
+At first the input parameters are checked if they can be transformed to correct invocation parameters. If this fails the program will prompt a small error message that informs how to set up the parameters correct and then exit.
+The invoking parameters are:
 
 \begin{enumerate}
    \item a string that represents the path and filename where the output of the program shall be stored
@@ -99,7 +101,7 @@ The invocing parameters are:
    \item a positive number that sets the first value for the primality test
 \end{enumerate}
 
-The second argument is then transformed to the actual size the chosen algorithm can compute and corresponds to the nearest number that matchs the algorithms scaling criteria. Where n is a positive number, the algorithms scale as follows:
+The second argument is then transformed to the actual size the chosen algorithm can compute and corresponds to the nearest number that matches the algorithms scaling criteria. Where n is a positive number, the algorithms scale as follows:
 \begin{itemize}
    \item The Ulam spiral
       $(2/n)+1$
@@ -112,7 +114,7 @@ For square alignment algorithms the scalability in general is $a^n$ where a is l
 
 The \emph{bmplib} library transforms the third argument into a mpz with base 10. This mpz is needed to grant arbitrary large numbers to pass the primality check and may itself be of finite size.
 
-Now the \emph{gmplib} creates a bmp file of the size determined before. Aftter the starting point for the algorithm is set, it is invoced with the number of iteration (the $n$ stated before) and the initial mpz. The algorithm itself traverses the bmp and at avery position checks if the corresponding number is a prime number or not. If so, the pixel is set to be white.
+Now the \emph{gmplib} creates a bmp file of the size determined before. After the starting point for the algorithm is set, it is invoked with the number of iteration (the $n$ stated before) and the initial mpz. The algorithm itself traverses the bmp and at every position checks if the corresponding number is a prime number or not. If so, the pixel is set to be white.
 
 The thereby generated 2 dimensional pixel array hold by the bmp file is now passed to the probability algorithms. There the array is traverses as the vector that probability algorithm recreates. For every white pixel the numerator is increased by one, where the denominator is increased with every pixel. This generates a 2 dimensional array where every array is one vector. This array hold a fraction. These 4 (one for every vector) 2 dimensional array are now printed on the  standard output stream and may be stored in a file.
 
@@ -120,34 +122,41 @@ At last the generated bmp is stored in the first given path and file name.
 
 The different alignment algorithms and the probability computation are executed one after another.
 
-To illustrate the differences and similarieties between the sequencial and the parallel design, these two charts which represents the control flow of the two programs are given:
+\subsection{Parallel design}
+\label{sec:paralleldesign}
+The decision that lead to this parallel design origin in the analysis of the X.264 codec parallelization. The report to this project can be found in \cite{BS08} and the analysis done in \cite{self}. The design of the parallel version also relied on the profiling results of the sequential version as described in section \ref{sec:seq_ex}. From theses informations i decided to split the program at first at the functions and then at the data.
+
+When splitting the functions a first step is transfer the alignment algorithms to the SPEs. this would leave the SPU idling and implies a high overhead of data generation. The potentially highly time intensive primality test then would be performed for every number at every algorithm. In addition, the initial number would have to be transfered. This is indeed not a trivial task. An arbitrary large number needs arbitrary large memory and the data structure in which the \emph{gmplib} stores these numbers are neither trivial.
+To avoid these two problems, the prime number generation is made at the SPU and the SPEs transfer the generated data and reorder it according to their algorithm. If there is additional data to transfer is indicated by an increasing counter. By this method, the SPE only reads set data that will not change again. This avoids concurrency problems.
+
+If the number of alignment algorithms is smaller than the number of SPEs (which is the case), the left over SPEs idle. In a more advanced sequential version the algorithms itself could be split in subparts. The treelike  recursion as seen in \ref{fig:hilbert_curve} can be parallelized quite efficiently. In this scenario, the algorithm is split until a preset amount of iterations is left. These iteration are computed on different SPEs. The offset to the origin from which the algorithm starts has be passed, so the subpart can produce the correct outcome. The merging of this data con either be done by the calling SPE or by a simple bitwise \emph{or} operation at the SPU where a pixel is set, when any SPE states that the pixel is a prime which in any case should be only one SPE.
+
+The spreading of single alignment algorithms to single SPEs also has the advantage that the code, which has to be present at the SPE is kept minimal. Every SPE only has the code it uses and not the complete set of algorithm from which it chooses one.
+
+In the next step - the computation of the probabilities is done by data splitting. The basic computation is a small summation and can be done very fast and efficient. Testing and profiling then has to determine if the SPU prearranges the arrays of the SPEs them self compute which parts of the two dimensional pixel array to retrieve to get an array which matches a vector. The second approach is more complex to implement but i guess it would be the more efficient way to do. The offset of the pixel data structure has to be studies carefully but can be done in parallel at the SPEs.
+
+Some points of the parallelization aspect have to be experienced live to value their impact on the software performance. Only experiences with the hard- and software can reveal bottlenecks and other problems with data alignment. These aspects are described in the section \ref{sec:par_imp}.
+
+\subsection{Comparison}
+\label{sec:designcomp}
+
+To illustrate the differences and similarities between the sequential and the parallel design, these two charts which represents the control flow of the two programs are given:
 
 \begin{figure}[H]
 \begin{minipage}[t]{0.475\textwidth}
 \centering
-    \graphic{seqflow}{width=5cm}{Controll flow of the sequencial version.} 
+    \graphic{seqflow}{width=5cm}{Controll flow of the sequential version.} 
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.475\textwidth}
 \centering
-   \graphic{parflow}{width=5cm}{Controll flow of the parallel version.}
+   \graphic{parflow}{width=5cm}{Control flow of the parallel version.}
 \end{minipage}
 \end{figure}
 
-\subsection{Parallel design}
-\label{sec:paralleldesign}
-The decision that lead to this parallel design origin in the analysis of the X.264 codec parallelzation. The report to this project can be found in \cite{BS08} and the analysis done in \cite{self}. The design of the parallel version also relied on the profiling results of the sequencial version as described in section \ref{sec:seq_ex}. From theses informations i decided to split the program at first at the functions and then at the data.
-
-When splitting the functions a first step is transfer the alignment algorithms to the SPEs. this would leave the SPU ideling and implies a high overhead of data generation. The potentially highly time intensive primality test then would be perfomed for every number at every algorithm. In addition, the initial number would have to be transfered. This is indeed not a trivial task. An arbitrary large number needs arbitrary large memory and the data structure in which the \emph{gmplib} stores these numbers are neither trivial.
-To avoid these two problems, the prime number generation is made at the SPU and the SPEs transfer the generated data and reorder it according to their algorithm. If there is additional data to transfer is indicated by an increasing counter. By this method, the SPE only reads set data that will not change again. This avoids concurrency problems.
-
-If the number of alignement algorithms is smaller than the number of SPEs (which is the case), the left over SPEs idle. In a more advanced sequencial version the algorithms itself could be split in subparts. The treelike  recursion as seen in \ref{fig:hilbert_curve} can be parallelized quite efficiently. In this scenario, the algorithm is split until a preset amount of iterations is left. These iteration are computet on different SPEs. The offset to the origin from which the algorithm starts has be passed, so the subpart can produce the correct outcome. The merging of this data con either be done by the calling SPE or by a simple bitwise \emph{or} operation at the SPU where a pixel is set, when any SPE states that the pixel is a prime which in any case should be only one SPE.
-
-The spreading of single alignement algorithms to single SPEs also has the advantage that the code, which has to be present at the SPE is kept minimal. Every SPE only has the code it uses and not the complete set of algorithm from which it chooses one.
-
-In the next step - the computation of the probabilities is done by data splitting. The basic computation is a small summation and can be done very fast and efficient. Testing and profiling then has to determine if the SPU prearranges the arrays of the SPEs themself compute which parts of the two dimensional pixel array to retrieve to get an array which matches a vector. The second approach is more complex to implement but i guess it would be the more efficient way to do. The offset of the pixel data structure has to be studies carefully but can be done in parallel at the SPEs.
-
-Some points of the parallization aspect have to be experienced live to value their imact on the software performance. Only experiences with the hard- and software can reveal bottlenecks and other problems with data alignement. These aspects are described in the section \ref{sec:par_ex}.
+In both figures, decision in the form of \emph{if then else} statements are represented by a rhombus where an optional feature is indicated by a circle. The cylinder stands for data storage where the lying shield like symbol is the standard output stream. The time in both figures proceed roughly from top to bottom where all cycles point to top expressing the additional time spend for every iteration. Data structures used are \emph{BMP}  for the bitmap file, \emph{pixel **} for the two dimensional pixel array and \emph{INT} for the initialization structure that holds all needed information to set up the program.
+Figure \ref{fig:seqflow} shows one algorithm and one one probability vector computation. To already suggest parallel approaches, the same program paths with other data is illustrated by arrows without any destination to the right. This is done with other alignment algorithms and for all vectors. The program can be seen as a tree where the algorithms are the first branch and the vectors as the following two branches.
+Figure \ref{fig:parflow} is vertically split into the section SPU and SPEs. The PPU manages the data storage and performs the primality test. The SPEs do the alignment algorithms and the probability vector computation.
 
 %2d array
 

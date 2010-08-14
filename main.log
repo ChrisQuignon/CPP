@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.6.3)  13 AUG 2010 23:26
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.6.3)  14 AUG 2010 12:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -334,78 +334,78 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 31.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-) (./main.toc
+) [1
+
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./main.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 4.
- [1
-
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+)
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- (./introduction.tex
+ [2] (./introduction.tex
 
-LaTeX Warning: Citation `zahlentheorie' on page 2 undefined on input line 11.
+LaTeX Warning: Citation `zahlentheorie' on page 3 undefined on input line 11.
 
 
-LaTeX Warning: Reference `fig:ulam_400_400' on page 2 undefined on input line 1
+LaTeX Warning: Reference `fig:ulam_400_400' on page 3 undefined on input line 1
 3.
 
 
-LaTeX Warning: Citation `web' on page 2 undefined on input line 13.
+LaTeX Warning: Citation `web' on page 3 undefined on input line 13.
 
 
-LaTeX Warning: Citation `web' on page 2 undefined on input line 13.
+LaTeX Warning: Citation `web' on page 3 undefined on input line 13.
 
-<graphics/ulam_spiral_numbers.png, id=10, 266.9975pt x 252.945pt>
+<graphics/ulam_spiral_numbers.png, id=13, 266.9975pt x 252.945pt>
 File: graphics/ulam_spiral_numbers.png Graphic file (type png)
 
 <use graphics/ulam_spiral_numbers.png>
-<graphics/ulam251.png, id=12, 251.94125pt x 251.94125pt>
+<graphics/ulam251.png, id=15, 251.94125pt x 251.94125pt>
 File: graphics/ulam251.png Graphic file (type png)
 
-<use graphics/ulam251.png> [2]) (./design.tex
+<use graphics/ulam251.png>) (./design.tex [3 <./graphics/ulam_spiral_numbers.pn
+g> <./graphics/ulam251.png (PNG copy)>]
 Overfull \hbox (1.52492pt too wide) in paragraph at lines 7--8
 \T1/lmr/m/n/10 A cor-rect, well im-ple-mented and doc-u-mented soft-ware that i
 m-ple-ments a method
  []
 
-[3 <./graphics/ulam_spiral_numbers.png> <./graphics/ulam251.png (PNG copy)>]
+[4]
 LaTeX Font Info:    Try loading font information for OMS+lmr on input line 54.
-
-(/usr/share/texmf/tex/latex/lm/omslmr.fd
+ (/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 54.
 
 
-LaTeX Warning: Citation `XXX' on page 4 undefined on input line 65.
+LaTeX Warning: Citation `XXX' on page 5 undefined on input line 65.
 
-[4] [5] <graphics/seqflow.png, id=33, 216.81pt x 361.35pt>
+[5] [6] [7] <graphics/seqflow.png, id=40, 216.81pt x 361.35pt>
 File: graphics/seqflow.png Graphic file (type png)
 
-<use graphics/seqflow.png> <graphics/parflow.png, id=34, 216.81pt x 361.35pt>
+<use graphics/seqflow.png> <graphics/parflow.png, id=41, 216.81pt x 361.35pt>
 File: graphics/parflow.png Graphic file (type png)
 
-<use graphics/parflow.png> [6] [7 <./graphics/seqflow.png (PNG copy)> <./graphi
-cs/parflow.png (PNG copy)>]) (./implementation.tex [8]
+<use graphics/parflow.png> [8 <./graphics/seqflow.png (PNG copy)> <./graphics/p
+arflow.png (PNG copy)>]) (./implementation.tex
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 15.
 
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [9]
-<graphics/hilbert_curve.png, id=49, 298.86656pt x 127.97812pt>
+) [9] [10]
+<graphics/hilbert_curve.png, id=52, 298.86656pt x 127.97812pt>
 File: graphics/hilbert_curve.png Graphic file (type png)
 
-<use graphics/hilbert_curve.png> [10 <./graphics/hilbert_curve.png>]
-<graphics/hilbertalgorithm.png, id=53, 284.56313pt x 255.95625pt>
+<use graphics/hilbert_curve.png> [11 <./graphics/hilbert_curve.png>]
+<graphics/hilbertalgorithm.png, id=57, 284.56313pt x 255.95625pt>
 File: graphics/hilbertalgorithm.png Graphic file (type png)
 
 <use graphics/hilbertalgorithm.png>
@@ -413,32 +413,33 @@ Overfull \hbox (17.45943pt too wide) in paragraph at lines 82--82
  [] 
  []
 
-[11 <./graphics/hilbertalgorithm.png>]) (./results.tex [12]
-<graphics/ncurve243.png, id=61, 243.91125pt x 243.91125pt>
+[12 <./graphics/hilbertalgorithm.png>] [13]) (./results.tex [14]
+<graphics/ncurve243.png, id=68, 243.91125pt x 243.91125pt>
 File: graphics/ncurve243.png Graphic file (type png)
 
 <use graphics/ncurve243.png>
-<graphics/hilbert128.png, id=62, 128.48pt x 128.48pt>
+<graphics/hilbert128.png, id=69, 128.48pt x 128.48pt>
 File: graphics/hilbert128.png Graphic file (type png)
 
 <use graphics/hilbert128.png>
-<graphics/ulamprobs.png, id=63, 341.02406pt x 227.34938pt>
+<graphics/ulamprobs.png, id=70, 341.02406pt x 227.34938pt>
 File: graphics/ulamprobs.png Graphic file (type png)
 
-<use graphics/ulamprobs.png> [13 <./graphics/ncurve243.png (PNG copy)> <./graph
+<use graphics/ulamprobs.png> [15 <./graphics/ncurve243.png (PNG copy)> <./graph
 ics/hilbert128.png (PNG copy)>]
-<graphics/hilbertprobs.png, id=68, 341.02406pt x 227.34938pt>
+<graphics/hilbertprobs.png, id=74, 341.02406pt x 227.34938pt>
 File: graphics/hilbertprobs.png Graphic file (type png)
 
-<use graphics/hilbertprobs.png> [14 <./graphics/ulamprobs.png>]
-<graphics/ncurveprobs.png, id=72, 341.02406pt x 227.34938pt>
+<use graphics/hilbertprobs.png> [16 <./graphics/ulamprobs.png (PNG copy)>]
+<graphics/ncurveprobs.png, id=78, 341.02406pt x 227.34938pt>
 File: graphics/ncurveprobs.png Graphic file (type png)
 
-<use graphics/ncurveprobs.png> [15 <./graphics/hilbertprobs.png> <./graphics/nc
-urveprobs.png>] <graphics/alltime.png, id=76, 341.02406pt x 227.34938pt>
+<use graphics/ncurveprobs.png> [17 <./graphics/hilbertprobs.png (PNG copy)> <./
+graphics/ncurveprobs.png (PNG copy)>]
+<graphics/alltime.png, id=82, 341.02406pt x 227.34938pt>
 File: graphics/alltime.png Graphic file (type png)
 
-<use graphics/alltime.png> [16 <./graphics/alltime.png>]
+<use graphics/alltime.png> [18 <./graphics/alltime.png>]
 Overfull \hbox (6.58986pt too wide) in alignment at lines 77--77
  [] [] [] [] [] [] [] 
  []
@@ -453,20 +454,20 @@ Overfull \hbox (17.45943pt too wide) in paragraph at lines 77--77
  [] 
  []
 
-) (./programusage.tex [17]) (./conclusion.tex) [18] (./main.bbl) [19]
+[19]) (./programusage.tex) (./conclusion.tex) [20] (./main.bbl) [21]
 (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3726 strings out of 495061
- 47449 string characters out of 1182622
- 113436 words of memory out of 3000000
- 6772 multiletter control sequences out of 15000+50000
+ 3728 strings out of 495061
+ 47478 string characters out of 1182622
+ 113458 words of memory out of 3000000
+ 6774 multiletter control sequences out of 15000+50000
  54906 words of font info for 61 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 30i,8n,25p,1033b,393s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,8n,25p,1098b,393s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/s
 hare/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm
@@ -479,9 +480,9 @@ blic/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/sha
 re/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmtt10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam
 10.pfb>
-Output written on main.pdf (19 pages, 525362 bytes).
+Output written on main.pdf (21 pages, 578046 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
+ 142 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

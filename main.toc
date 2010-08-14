@@ -1,34 +1,40 @@
 \select@language {UKenglish}
-\contentsline {section}{\numberline {1}Introduction}{2}
-\contentsline {section}{\numberline {2}Design}{3}
-\contentsline {subsection}{\numberline {2.1}Main requirements}{3}
-\contentsline {subsubsection}{\numberline {2.1.1}Parallel pattern searching}{3}
-\contentsline {subsubsection}{\numberline {2.1.2}Cell processor exploitation}{3}
-\contentsline {subsection}{\numberline {2.2}Additional requirements}{3}
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {section}{\numberline {2}Design}{4}
+\contentsline {subsection}{\numberline {2.1}Main requirements}{4}
+\contentsline {subsubsection}{\numberline {2.1.1}Parallel pattern searching}{4}
+\contentsline {subsubsection}{\numberline {2.1.2}Cell processor exploitation}{4}
+\contentsline {subsection}{\numberline {2.2}Additional requirements}{4}
 \contentsline {subsubsection}{\numberline {2.2.1}Primality test}{4}
 \contentsline {paragraph}{AKS primality test}{4}
-\contentsline {paragraph}{Sieve of Eratosthenes}{4}
-\contentsline {paragraph}{Miller-Rabin probabilistic primality test}{4}
-\contentsline {subsubsection}{\numberline {2.2.2}Number size}{4}
+\contentsline {paragraph}{Sieve of Eratosthenes}{5}
+\contentsline {paragraph}{Miller-Rabin probabilistic primality test}{5}
+\contentsline {subsubsection}{\numberline {2.2.2}Number size}{5}
 \contentsline {subsubsection}{\numberline {2.2.3}Testing}{5}
-\contentsline {subsubsection}{\numberline {2.2.4}Storage}{5}
-\contentsline {subsection}{\numberline {2.3}Sequencial design}{5}
+\contentsline {subsubsection}{\numberline {2.2.4}Storage}{6}
+\contentsline {subsection}{\numberline {2.3}Sequencial design}{6}
 \contentsline {subsection}{\numberline {2.4}Parallel design}{7}
-\contentsline {section}{\numberline {3}Implementation}{8}
-\contentsline {subsection}{\numberline {3.1}Libraries}{8}
-\contentsline {subsubsection}{\numberline {3.1.1}gmplib}{8}
-\contentsline {subsubsection}{\numberline {3.1.2}libbmp}{8}
-\contentsline {subsection}{\numberline {3.2}Space filling curves}{9}
+\contentsline {subsection}{\numberline {2.5}Comparison}{8}
+\contentsline {section}{\numberline {3}Implementation}{9}
+\contentsline {subsection}{\numberline {3.1}Libraries}{9}
+\contentsline {subsubsection}{\numberline {3.1.1}gmplib}{9}
+\contentsline {subsubsection}{\numberline {3.1.2}libbmp}{9}
+\contentsline {subsection}{\numberline {3.2}Space filling curves}{10}
 \contentsline {subsubsection}{\numberline {3.2.1}Primality Test}{10}
 \contentsline {subsubsection}{\numberline {3.2.2}Spiral Algorithm}{10}
-\contentsline {subsubsection}{\numberline {3.2.3}Hilbert Curve}{10}
+\contentsline {subsubsection}{\numberline {3.2.3}Hilbert Curve}{11}
 \contentsline {subsection}{\numberline {3.3}Pattern Detection}{12}
-\contentsline {subsection}{\numberline {3.4}Difficulties in the parallel version}{12}
-\contentsline {section}{\numberline {4}Experimental Results}{12}
-\contentsline {subsection}{\numberline {4.1}Prime number probability}{13}
-\contentsline {subsection}{\numberline {4.2}Sequencial execution}{16}
-\contentsline {subsection}{\numberline {4.3}Parallel execution}{18}
-\contentsline {subsection}{\numberline {4.4}Comparison}{18}
-\contentsline {section}{\numberline {5}Program usage}{18}
-\contentsline {subsection}{\numberline {5.1}The git repository}{18}
-\contentsline {section}{\numberline {6}Conclusion}{18}
+\contentsline {subsection}{\numberline {3.4}Parallel implementation}{13}
+\contentsline {subsubsection}{\numberline {3.4.1}Pointers}{13}
+\contentsline {subsubsection}{\numberline {3.4.2}Two dimensional arrays}{14}
+\contentsline {subsubsection}{\numberline {3.4.3}Data transfer size}{14}
+\contentsline {section}{\numberline {4}Experimental Results}{14}
+\contentsline {subsection}{\numberline {4.1}Prime number probability}{15}
+\contentsline {subsection}{\numberline {4.2}Sequencial execution}{18}
+\contentsline {subsection}{\numberline {4.3}Parallel execution}{20}
+\contentsline {subsection}{\numberline {4.4}Comparison}{20}
+\contentsline {section}{\numberline {5}Program usage}{20}
+\contentsline {subsection}{\numberline {5.1}The git repository}{20}
+\contentsline {section}{\numberline {6}Conclusion}{20}
+\contentsline {subsection}{\numberline {6.1}Prime number alignement}{20}
+\contentsline {subsection}{\numberline {6.2}}{20}
