@@ -3,13 +3,13 @@
 
 To compile and use the program \emph{gmplib} must be installed. The \emph{libbmp} is already included and an additional installation is not necessary. A makefile is for compilation is also available. If the compilation does not work properly, this is where one can see which standard libraries as the \emph{math.h} were also used but not mentioned extra. This includes the \emph{libspe} and \emph{mfcio} libraries needed for compilation on the Cell. In addition, \emph{make par} will compile the code and then execute it with sample parameters. Deletion of produced output can be deleted with \emph{make clean}.
 
-In addition, the shell script \emph{run.sh} compiles and executes the program to produce the data used in this report. It requires \emph{gprof} to be installed which is not mandatory for the software itself.
+The shell script \emph{run.sh} compiles and executes the program to produce the data used in this report. It requires \emph{gprof} to be installed which is not mandatory for the software itself.
 
 To run the program with your own parameters see section \ref{sec:serial_design} to gain information about the invoking parameters.
 
 \subsection{The git repository}
-The implementation of the parallel version has failed. Nonetheless i gave the \emph{git} repository to you so one can reproduce and understand the difficulties i had during the implementation. To navigate through the repository \emph{git} must be installed. Further information about \emph{git} can best be found at the website \url{http://git-scm.com/}.
-Please note that the process of implementing software is a creative and chaotic process, it was not intended to release the repository. It is not commented at all and most likely not understandable. Sorry for that.
+The implementation of the parallel version has failed. Nonetheless I handed in the \emph{git} repository to you so one can reproduce and understand the difficulties I had during the implementation. To navigate through the repository \emph{git} must be installed. Further information about \emph{git} can best be found at the website \url{http://git-scm.com/}.
+Please note that the process of implementing software is a creative and chaotic process. It was not intended to release the repository. It is not commented very well and most likely not understandable. Sorry for that.
 
 The serial version of the program is stored in the branch \emph{serial} in this repository. Makefile and shell script are also included for the serial version. The invoking parameters are the same. 
 

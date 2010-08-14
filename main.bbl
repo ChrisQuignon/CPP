@@ -1,17 +1,18 @@
 \newcommand{\etalchar}[1]{$^{#1}$}
 \begin{thebibliography}{AMP{\etalchar{+}}08}
 
-\bibitem[AKS02]{primeisp}
-Manindra Agrawal, Neeraj Kayal, and Nitin Saxena.
-\newblock Primes is in p.
-\newblock {\em Ann. of Math}, 2:781--793, 2002.
-
 \bibitem[AMP{\etalchar{+}}08]{PTC}
 Abraham Arevalo, Ricardo~M. Matinata, Maharaja Pandian, Eitan Peri, Kurtis
   Ruby, Francois Thomas, and Chris Almond.
 \newblock {\em Programming the Cell Broadband Engine Architecture: Examples and
   Best Practices}.
 \newblock IBM Redbooks, 2008.
+
+\bibitem[BB07]{image}
+Wilhelm Burger and Mark~J. Burge.
+\newblock {\em Digital Image Processing: An Algorithmic Introduction using
+  Java}.
+\newblock Springer, November 2007.
 
 \bibitem[BCC{\etalchar{+}}08]{BS08}
 Shrivathsa Bhargav, Jonathan Chen, Larry Chen, Thomas John, and Jaime
@@ -38,5 +39,20 @@ Christophe Quignon.
 Michael~O. Rabin.
 \newblock Probabilistic algorithm for testing primality.
 \newblock {\em J. Number Theory}, 12(1):128--138, 1980.
+
+\bibitem[RS07]{zahlentheorie}
+Kristina Reiss and Gerald Schmieder.
+\newblock Basiswissen zahlentheorie, 2007.
+
+\bibitem[Sca08]{cellguide}
+Matthew Scarpino.
+\newblock {\em Programming the Cell Processor: For Games, Graphics, and
+  Computation}.
+\newblock Prentice Hall PTR, Upper Saddle River, NJ, USA, 2008.
+
+\bibitem[Sup05]{bmp}
+Microsoft Support.
+\newblock Dibs and their uses, February 2005.
+\newblock Available at http://support.microsoft.com/kb/81498.
 
 \end{thebibliography}

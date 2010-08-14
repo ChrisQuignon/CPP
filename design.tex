@@ -2,37 +2,21 @@
 \label{sec:design}
 The design of the software was aligned to the given requirements and will be presented in the same order. In a conflating step, the given design deliberations are merged to an overall design.
 
-\subsection{Main requirements}
-\label{sec:main_req}
-A correct, well implemented and documented software that implements a method of parallelizing the search for patterns while exploiting the architecture of the Cell processor is the main goal of this project.
-
-\subsubsection{Parallel pattern detection}
-\label{sec:parallel_search}
-The identification of probability vectors within the prime number traversion is discussed in detail in section \ref{sec:pattern}. Here i will explain how this identification is designed for the parallel implementation.
-
-\subsubsection{Cell processor exploitation}
-\label{sec:cell_exploit}
-
-\cite{cellguide}
 
 
-
-
-\subsection{Additional requirements}
-\label{sec:additional_req}
-The project also gave the opportunity to discover various challenges in the field of computer science. They are the inherent basis of this project and were examined and solved, as set by the requirements. The first named basic points are A small survey of them is given hereafter.
-
-\subsubsection{Primality test}
+\subsubsection{Primality tests}
 \label{sec:primality_test}
-A more theoretical problem is the primality test. It tests if a given number \emph{n} is a prime number, but does not lead to its prime factors and therefor is a bit faster than integer factorization. This tests applied to a list of all integers leads to a list of all primes and is therefore suitable to create an Ulam spiral. Probabilist test hold a chance for false positives, for their prove is restricted with a probability. An error within this probability may lead to unintended patterns in the Ulam spiral.
+A more theoretical problem is the primality test. It tests if a given number \emph{n} is a prime number, but does not lead to its prime factors and therefor is a bit faster than integer factorization. This tests applied to a list of all integers leads to a list of all primes and is therefore suitable to create an Ulam spiral. Probabilist test hold a chance for false positives, for their prove is restricted with a probability. An error within this probability may lead to unintended patterns in the Ulam spiral. This problem is considered in section \ref{sec:prim_test} where the implementation of the primality test is discussed.
 
-The simplest primality test is brute force testing on all numbers up to \emph{n}, if \emph{n} is divisible by any of these numbers. A small improvement would be to  test just numbers $< \sqrt{n}$, because at least one of the factors of \emph{n} hast to be in this range.
+Before the decision, which primality test is used, some of these test were examined:
+
+\paragraph{Naive primality test}
+The simplest and less effective primality test for the number $n$ is to check all numbers up to \emph{n}, if \emph{n} is divisible by any of these numbers. A small improvement would be to  test just numbers $< \sqrt{n}$, because at least one of the factors of \emph{n} hast to be in this range.
 
 %A famous deterministic primality test is the "Adleman-Pomerance-Rumely primality test". It was later improved by Henri Cohen and Arjen Lenstra and can test primality of an integer n in time:
     $(\log n)^{O(\log\,\log \,\log n)}$. 
 
-\paragraph{AKS primality test}
-The AKS primality test (also known as Agrawal-Kayal-Saxena primality test and cyclotomic AKS test) is a deterministic primality-proving algorithm and was published in \cite{primeisp}.
+%\paragraph{The AKS primality test}, also known as Agrawal-Kayal-Saxena primality test ord cyclotomic AKS test is a deterministic primality-proving algorithm and was published in \cite{primeisp}. And is descibed as follows:
 
 %\begin{quote}
 %Input:\\
@@ -58,21 +42,23 @@ From a list of all natural numbers $> 2$ the three following steps will reveal a
    \item repeat  
 \end{itemize}%enumerate
 
+This test scales quite well for small numbers up to 10,000. The test of every number includes the testing of all numbers below which results in massive computation overhead if the number exceeds the algorithms scalability.
+
 \paragraph{Miller-Rabin probabilistic primality test}
-The Miller-Rabin probabilistic primality test was first published in \cite{MRPT} and verified in \cite{MRVer}. The running time of this algorithm is $O(k log^{3} n)$, where k is the number of different values tested.
+The Miller-Rabin probabilistic primality test was first published in \cite{MRPT} and verified in \cite{MRVer}. The running time of this algorithm is $O(k log^{3} n)$, where k is the number of different values tested. Therefore it is quite performant while have the chance of false positives.
 
 \subsubsection{Number size}
 \label{sec:number_size}
 As proven by Euclid, there are infinitive many prime numbers. To verify possible patterns, the large prime numbers are of special interest. Only if a regularity also holds with large numbers, it is of interest to proof this regularity mathematically.
-The prime number theorem (PNT) describes the asymptotic distribution of the prime numbers. The PNT, based on the formula of prime distribution by Gauss\cite{XXX}, gives an approximation of the density of prime numbers. This density seems do decrease with larger numbers, as there are larger and larger prime gaps. This may confirm regularities and also may be conformed by found regularities.
+The prime number theorem (PNT) describes the asymptotic distribution of the prime numbers. The PNT, based on the formula of prime distribution by Gauss, gives an approximation of the density of prime numbers. According to Chebyshev, this density seems do decrease with larger numbers, as there are larger and larger prime gaps. This may confirm regularities and also may be conformed by found regularities.
 
-From the viewpoint of a programming language, big numbers are problems. In theory, every number is only restricted by the memory size that holds the number. In practice, the limiting factor is the standard which defines the representation of the number and the size of the smallest cache the number passes. This normally is limited to 32bit in old processor architectures and 64 bit in modern architectures like the PS3.
+From the viewpoint of a programming language, large numbers include growing complexity in their handling. In theory, every number is only restricted by the memory size that holds the number. In practice, the limiting factor is the standard which defines the representation of the number and the size of the smallest cache the number passes. This normally is limited to 32bit on old processor architectures and 64 bit in modern architectures like the PS3.
 
 For prime numbers, the problem only scales on the set of all positive natural numbers, which is quite smaller problem then simulating continuous numbers and handling discretization errors. The  very common problem of large natural number handling is solved by various libraries, but has to be implemented with care. Buffer overflows on too small number ranges highly harm the result of the computation and have to be avoided.
 
 \subsubsection{Testing}
 \label{sec:tests}
-To have a basis on which the pattern searches may be performed, several changes to the original Ulam spiral were regarded:
+To have a basis on which the pattern searches may be performed, several changes to the original Ulam spiral were taken in account:
 
 \begin{itemize}%enumerate
    \item Starting number
@@ -82,58 +68,60 @@ To have a basis on which the pattern searches may be performed, several changes 
    \item Dimension of the curve   
 \end{itemize}%enumerate
 
-In rising complexity and time consumption, the last two point were dropped to future works, but the starting number, the size of the space and another curve were implemented and tested.
+In rising complexity and time consumption, the last two point were dropped to future works, but the starting number, the size of the space and another two curves were implemented and tested.
 
 \subsubsection{Storage}
 \label{sec:concurrency}
-The architecture of the PS3 with its Synergistic Processing Elements (SPE) limit the amount of data that can be processed. 256KB embedded SRAM have to store the instructions and data.\cite{PTC}
+The architecture of the PS3 with its Synergistic Processing Elements (SPE) limit the amount of data that can be processed. 256KB embedded SRAM have to store the instructions and data.$^{\cite{PTC}}$
 Large data has to be broken down to chunks of at most this size. Context switches and data reloads will slow down the process and keep the processor idle. An optimal data size will support constant data reloads to keep the processor busy. A rough approximation of the instruction size, the time needed to move the data and a mechanism to detect an idling SPE is needed to optimize the program.
 
 \subsection{Sequential design}
 \label{sec:serial_design}
 This section will explain in detail how the serial version of the software works.
-At first the input parameters are checked if they can be transformed to correct invocation parameters. If this fails the program will prompt a small error message that informs how to set up the parameters correct and then exit.
+At first the input parameters are checked if they can be transformed to correct invocation parameters that can be passed to the alignment algorithm. If this fails the program will inform the user how to set up the parameters correct and then exit.
 The invoking parameters are:
 
 \begin{enumerate}
-   \item a string that represents the path and filename where the output of the program shall be stored
-   \item a positive integer that is a reference point to determine the size of the generated image
-   \item a positive number that sets the first value for the primality test
+   \item a string\\ which sets the path and filename where the output of the program shall be stored
+   \item a positive integer\\ that is a reference point to determine the size of the generated image
+   \item a positive natural number to base 10\\ that sets the first value for the primality test
 \end{enumerate}
 
-The second argument is then transformed to the actual size the chosen algorithm can compute and corresponds to the nearest number that matches the algorithms scaling criteria. Where n is a positive number, the algorithms scale as follows:
+Now the second argument is transformed to the actual size the chosen algorithm can compute and corresponds to the nearest number that matches the algorithms scaling criteria which are defines as follows with $n$ as a positive number:
 \begin{itemize}
-   \item The Ulam spiral
+   \item The Ulam spiral\\
       $(2/n)+1$
-   \item The Hilbert curve
+   \item The Hilbert curve\\
       $2^n$
-   \item The N Curve
+   \item The N Curve\\
       $3^n$
 \end{itemize}
-For square alignment algorithms the scalability in general is $a^n$ where a is length of minimal iteration. This has to be changed if the alignment algorithms is not of square form.
+For a recursive alignment algorithms of square shape, the scalability in general is $a^n$ where a is length of minimal iteration. This has to be changed if the alignment algorithms is not of square form.
 
-The \emph{bmplib} library transforms the third argument into a mpz with base 10. This mpz is needed to grant arbitrary large numbers to pass the primality check and may itself be of finite size.
+The \emph{bmplib} library transforms the third argument into a \emph{mpz} (where \emph{mp} stands for Multiple Precision and \emph{z} represents the signed integer type) with base 10. This \emph{mpz} is needed to grant arbitrary large numbers to pass the primality check and may itself be of finite size.
 
-Now the \emph{gmplib} creates a bmp file of the size determined before. After the starting point for the algorithm is set, it is invoked with the number of iteration (the $n$ stated before) and the initial mpz. The algorithm itself traverses the bmp and at every position checks if the corresponding number is a prime number or not. If so, the pixel is set to be white.
-
-The thereby generated 2 dimensional pixel array hold by the bmp file is now passed to the probability algorithms. There the array is traverses as the vector that probability algorithm recreates. For every white pixel the numerator is increased by one, where the denominator is increased with every pixel. This generates a 2 dimensional array where every array is one vector. This array hold a fraction. These 4 (one for every vector) 2 dimensional array are now printed on the  standard output stream and may be stored in a file.
-
-At last the generated bmp is stored in the first given path and file name.
+In the next step, the \emph{gmplib} creates a bitmap (bmp) file of the size determined before. After the starting point for the algorithm is set, it is invoked with the number of iteration (the $n$ stated before) and the initial \emph{mpz}. The algorithm itself traverses the bmp and at every position checks if the corresponding number is a prime number or not. If so, the pixel is set to be black.
+Now the generated bmp may be stored with the first given path and file name.
+The thereby generated two dimensional pixel array contained within the bmp file is now transformed to other pixel arrays which form vectors through the bmp. The probability algorithm receives these pixel arrays and for every white pixel within one of these arrays the numerator is increased by one, where the denominator is increased with every pixel. After this transformation the array now is a fraction. All parallel vectors are now again set into an array they holds all probabilities for one of four vectors that stand at an angle of 45$^\circ$. Finally, they are now printed on the standard output stream and may be stored in a file.
 
 The different alignment algorithms and the probability computation are executed one after another.
 
 \subsection{Parallel design}
 \label{sec:paralleldesign}
-The decision that lead to this parallel design origin in the analysis of the X.264 codec parallelization. The report to this project can be found in \cite{BS08} and the analysis done in \cite{self}. The design of the parallel version also relied on the profiling results of the sequential version as described in section \ref{sec:seq_ex}. From theses informations i decided to split the program at first at the functions and then at the data.
+The decision that lead to this parallel design origin in the analysis of the X.264 codec parallelization. The report of this project can be found in \cite{BS08} and the analysis in \cite{self}. The design of the parallel version also relied on the profiling results of the sequential version as described in section \ref{sec:seq_ex}. From theses informations I decided to split the program at first along the functions and then along the data.
 
-When splitting the functions a first step is transfer the alignment algorithms to the SPEs. this would leave the SPU idling and implies a high overhead of data generation. The potentially highly time intensive primality test then would be performed for every number at every algorithm. In addition, the initial number would have to be transfered. This is indeed not a trivial task. An arbitrary large number needs arbitrary large memory and the data structure in which the \emph{gmplib} stores these numbers are neither trivial.
-To avoid these two problems, the prime number generation is made at the SPU and the SPEs transfer the generated data and reorder it according to their algorithm. If there is additional data to transfer is indicated by an increasing counter. By this method, the SPE only reads set data that will not change again. This avoids concurrency problems.
+When splitting the functions, a first step is the swapping of the complete alignment algorithms with the primality test to the SPEs. This would leave the Power Processor Unit (PPU) idling and implies a high overhead of data generation. The potentially highly time intensive primality test then would be performed for every number at every SPE. In addition, the initial number would have to be transfered. This is indeed not a trivial task. An arbitrary large number needs arbitrary large memory and the data structure in which the \emph{gmplib} stores these numbers are neither trivial.
+To avoid these two problems, the prime number generation is done at the PPU and the SPEs transfer the generated data and reorder it according to their algorithm.
+The PPU provides the data in small portions and if there is additional data ready to transfer it will increase a counter that can be read by the SPE. With this method, the SPE only reads set data that will not change again. This avoids concurrency issues.
 
-If the number of alignment algorithms is smaller than the number of SPEs (which is the case), the left over SPEs idle. In a more advanced sequential version the algorithms itself could be split in subparts. The treelike  recursion as seen in \ref{fig:hilbert_curve} can be parallelized quite efficiently. In this scenario, the algorithm is split until a preset amount of iterations is left. These iteration are computed on different SPEs. The offset to the origin from which the algorithm starts has be passed, so the subpart can produce the correct outcome. The merging of this data con either be done by the calling SPE or by a simple bitwise \emph{or} operation at the SPU where a pixel is set, when any SPE states that the pixel is a prime which in any case should be only one SPE.
+If the number of alignment algorithms is smaller than the number of SPEs (which is the case), the left over SPEs idle. In a more advanced sequential version the algorithms itself could be split into subparts. The treelike  recursion as seen in figure \ref{fig:hilbertalgorithm} can be parallelized quite efficiently. In this scenario, the algorithm would be split until a preset amount of iterations is left. These iteration are computed on different SPEs. The offset to the origin from which the algorithm starts has to be passed, so the subpart can produce the correct outcome. The final merging of these subparts can either be done by the calling SPE or by a simple bitwise \emph{or} operation at the PPU where a pixel is set, when any SPE states that the pixel is a prime. In practice this in any case should be only one SPE.
 
-The spreading of single alignment algorithms to single SPEs also has the advantage that the code, which has to be present at the SPE is kept minimal. Every SPE only has the code it uses and not the complete set of algorithm from which it chooses one.
+The spreading of single alignment algorithms to single SPEs also has the advantage that the code, which has to be present at the SPE is kept minimal. Every SPE only has the code it uses and not the complete set of algorithm from which has to be chosen.
 
-In the next step - the computation of the probabilities is done by data splitting. The basic computation is a small summation and can be done very fast and efficient. Testing and profiling then has to determine if the SPU prearranges the arrays of the SPEs them self compute which parts of the two dimensional pixel array to retrieve to get an array which matches a vector. The second approach is more complex to implement but i guess it would be the more efficient way to do. The offset of the pixel data structure has to be studies carefully but can be done in parallel at the SPEs.
+In the next step - the computation of the probabilities - is parallelized with the method of data splitting. The computation is a small summation and can be done very fast and efficient.
+
+There are two method how the vector can be assembled. Either the PPU prearranges the array or the SPE computes for itself, where to get the single values that form the vector.  The offset of the pixel data structure has to be studies carefully but can be done in parallel at the SPEs. This point is discussed in more detail at section \ref{sec:2darray}. The second approach is more complex to implement and I guess it would be the more efficient way to do. This decision of course has to be determined by profiling and testing.
+
 
 Some points of the parallelization aspect have to be experienced live to value their impact on the software performance. Only experiences with the hard- and software can reveal bottlenecks and other problems with data alignment. These aspects are described in the section \ref{sec:par_imp}.
 
@@ -145,7 +133,7 @@ To illustrate the differences and similarities between the sequential and the pa
 \begin{figure}[H]
 \begin{minipage}[t]{0.475\textwidth}
 \centering
-    \graphic{seqflow}{width=5cm}{Controll flow of the sequential version.} 
+    \graphic{seqflow}{width=5cm}{Control flow of the sequential version.} 
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.475\textwidth}
@@ -154,11 +142,15 @@ To illustrate the differences and similarities between the sequential and the pa
 \end{minipage}
 \end{figure}
 
-In both figures, decision in the form of \emph{if then else} statements are represented by a rhombus where an optional feature is indicated by a circle. The cylinder stands for data storage where the lying shield like symbol is the standard output stream. The time in both figures proceed roughly from top to bottom where all cycles point to top expressing the additional time spend for every iteration. Data structures used are \emph{BMP}  for the bitmap file, \emph{pixel **} for the two dimensional pixel array and \emph{INT} for the initialization structure that holds all needed information to set up the program.
-Figure \ref{fig:seqflow} shows one algorithm and one one probability vector computation. To already suggest parallel approaches, the same program paths with other data is illustrated by arrows without any destination to the right. This is done with other alignment algorithms and for all vectors. The program can be seen as a tree where the algorithms are the first branch and the vectors as the following two branches.
-Figure \ref{fig:parflow} is vertically split into the section SPU and SPEs. The PPU manages the data storage and performs the primality test. The SPEs do the alignment algorithms and the probability vector computation.
+In both figures, decision in the form of \emph{if - then - else} statements are represented by a rhombus. An optional feature is indicated by a circle. The cylinder stands for data storage and the lying, shield like symbol is the standard output stream. The time in both figures proceed roughly from top to bottom where all cycles point to top, thus expressing the additional time spend for every iteration. Data structures used are \emph{BMP}  for the bitmap file, \emph{pixel **} for the two dimensional pixel array and \emph{INIT} for the initialization structure that holds all needed information to set up the program.
 
-%2d array
+Figure \ref{fig:seqflow} shows one algorithm and one one probability vector computation. In anticipation to the parallel design, the program paths that resemble the shown one but with other data is illustrated by arrows without any destination to the right. This is the case for different alignment algorithms and for all vectors. With this in mind, the program can be seen as a tree where the algorithms are the first branch and the vectors as the following two branches.
+
+Figure \ref{fig:parflow} is vertically split into the section PPU and SPEs. The PPU manages the data storage and performs the primality test. The SPEs do the alignment algorithms and the probability vector computation.
+
+The chosen presentation as well as the de facto designs reveal no vast differences between the parallel and the sequential version. This of course was intentionally. Right from the start the parallel version was hold in mind and influenced some decision made for the serial version. The data parallelization is to complex and to repetitive to be viewed in an image that shall summarize the design. This holds, too for the function parallelization which also minimized in the visual representation. Both of these decision are made to be of minimal in reimplementation effort. The one thing that is visually represented analogous to the challenge it is, is the data distribution between the SPE and the PPU. The main memory representation moved from the left to the center where it is heavily accessed by the SPE and the PPU. One can also conclude from the image that the SPE is not kept busy all the time, even if the representation of time is quite variant in the figures.
+
+%comparison
 
 %\subsection{subsection}
 %\subsubsection{subsubsection}

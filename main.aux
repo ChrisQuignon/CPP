@@ -4,96 +4,90 @@
 \@writefile{lof}{\select@language{UKenglish}}
 \@writefile{lot}{\select@language{UKenglish}}
 \citation{zahlentheorie}
-\citation{web}
-\citation{web}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{3}}
 \newlabel{sec:intro}{{1}{3}}
-\newlabel{fig:ulam_spiral_numbers}{{1}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Motivation}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Background}{3}}
+\newlabel{fig:ulam_spiral_numbers}{{1.2}{3}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The Ulam Spiral center.}}{3}}
-\newlabel{fig:ulam251}{{1}{3}}
+\newlabel{fig:ulam251}{{1.2}{3}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces A 251 x 251 Ulam spiral.}}{3}}
-\citation{primeisp}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Design}{4}}
-\newlabel{sec:design}{{2}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Main requirements}{4}}
-\newlabel{sec:main_req}{{2.1}{4}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}Parallel pattern searching}{4}}
-\newlabel{sec:parallel_search}{{2.1.1}{4}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}Cell processor exploitation}{4}}
-\newlabel{sec:cell_exploit}{{2.1.2}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Additional requirements}{4}}
-\newlabel{sec:additional_req}{{2.2}{4}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Primality test}{4}}
-\newlabel{sec:primality_test}{{2.2.1}{4}}
-\@writefile{toc}{\contentsline {paragraph}{AKS primality test}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Goals}{4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.3.1}Main requirements}{4}}
+\newlabel{sec:main_req}{{1.3.1}{4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.3.2}Additional requirements}{4}}
+\newlabel{sec:additional_req}{{1.3.2}{4}}
 \citation{MRPT}
 \citation{MRVer}
-\citation{XXX}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Design}{5}}
+\newlabel{sec:design}{{2}{5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.0.3}Primality tests}{5}}
+\newlabel{sec:primality_test}{{2.0.3}{5}}
+\@writefile{toc}{\contentsline {paragraph}{Naive primality test}{5}}
 \@writefile{toc}{\contentsline {paragraph}{Sieve of Eratosthenes}{5}}
 \@writefile{toc}{\contentsline {paragraph}{Miller-Rabin probabilistic primality test}{5}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Number size}{5}}
-\newlabel{sec:number_size}{{2.2.2}{5}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Testing}{5}}
-\newlabel{sec:tests}{{2.2.3}{5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.0.4}Number size}{5}}
+\newlabel{sec:number_size}{{2.0.4}{5}}
 \citation{PTC}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.4}Storage}{6}}
-\newlabel{sec:concurrency}{{2.2.4}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Sequencial design}{6}}
-\newlabel{sec:serial_design}{{2.3}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.0.5}Testing}{6}}
+\newlabel{sec:tests}{{2.0.5}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.0.6}Storage}{6}}
+\newlabel{sec:concurrency}{{2.0.6}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Sequential design}{7}}
+\newlabel{sec:serial_design}{{2.1}{7}}
 \citation{BS08}
 \citation{self}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Parallel design}{7}}
-\newlabel{sec:paralleldesign}{{2.4}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Comparison}{8}}
-\newlabel{sec:designcomp}{{2.5}{8}}
-\newlabel{fig:seqflow}{{2.5}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Controll flow of the sequencial version.}}{8}}
-\newlabel{fig:parflow}{{2.5}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Controll flow of the parallel version.}}{8}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Implementation}{9}}
-\newlabel{sec:implementation}{{3}{9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Libraries}{9}}
-\newlabel{sec:libs}{{3.1}{9}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}gmplib}{9}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2}libbmp}{9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Space filling curves}{10}}
-\newlabel{sec:curves}{{3.2}{10}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Primality Test}{10}}
-\newlabel{sec:prim_test}{{3.2.1}{10}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Spiral Algorithm}{10}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}Hilbert Curve}{11}}
-\newlabel{fig:hilbert_curve}{{3.2.3}{11}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Three Iteration of the Hilbert curve.}}{11}}
-\newlabel{fig:hilbertalgorithm}{{3.2.3}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Two Iteration of the Hilbert curve grammar in tree form.}}{12}}
-\newlabel{hilbert_grammar}{{3.2.3}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Derivation of three iterations of the Hilbert curve.}}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Pattern Detection}{12}}
-\newlabel{sec:pattern}{{3.3}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Parallel implementation}{13}}
-\newlabel{sec:par_imp}{{3.4}{13}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1}Pointers}{13}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2}Two dimensional arrays}{14}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.3}Data transfer size}{14}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Experimental Results}{14}}
-\newlabel{sec:results}{{4}{14}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Prime number probability}{15}}
-\newlabel{sec:resprob}{{4.1}{15}}
-\newlabel{fig:ncurve243}{{4.1}{15}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Primes aligned on a 243 x 241 N curve.}}{15}}
-\newlabel{fig:hilbert128}{{4.1}{15}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Primes aligned to a 128 x 128 Hilbert curve.}}{15}}
-\newlabel{fig:ulamprobs}{{4.1}{16}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Probabilities within the Ulam spiral.}}{16}}
-\newlabel{fig:hilbertprobs}{{4.1}{17}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Probabilities within the the Hilbert curve.}}{17}}
-\newlabel{fig:ncurveprobs}{{4.1}{17}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Probabilities within the the N curve.}}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Parallel design}{8}}
+\newlabel{sec:paralleldesign}{{2.2}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Comparison}{9}}
+\newlabel{sec:designcomp}{{2.3}{9}}
+\newlabel{fig:seqflow}{{2.3}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Control flow of the sequential version.}}{9}}
+\newlabel{fig:parflow}{{2.3}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Control flow of the parallel version.}}{9}}
+\citation{cellguide}
+\citation{bmp}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Implementation}{10}}
+\newlabel{sec:implementation}{{3}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Libraries}{10}}
+\newlabel{sec:libs}{{3.1}{10}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}gmplib}{10}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2}libbmp}{11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Primality test}{11}}
+\newlabel{sec:prim_test}{{3.2}{11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Space filling curves}{11}}
+\newlabel{sec:curves}{{3.3}{11}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Definition}{11}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Spiral algorithm}{12}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Hilbert curve}{12}}
+\newlabel{fig:hilbert_curve}{{3.3.3}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Three Iteration of the Hilbert curve.}}{12}}
+\newlabel{fig:hilbertalgorithm}{{3.3.3}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Two Iteration of the Hilbert curve grammar in tree form.}}{13}}
+\citation{image}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Pattern detection}{14}}
+\newlabel{sec:pattern}{{3.4}{14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Parallel implementation}{14}}
+\newlabel{sec:par_imp}{{3.5}{14}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.1}Pointers}{15}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.2}Two dimensional arrays}{15}}
+\newlabel{sec:2darray}{{3.5.2}{15}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.3}Data transfer size}{16}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Experimental Results}{16}}
+\newlabel{sec:results}{{4}{16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Prime number probability}{16}}
+\newlabel{sec:resprob}{{4.1}{16}}
+\newlabel{fig:ncurve243}{{4.1}{16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Primes aligned on a 241 x 241 N curve.}}{16}}
+\newlabel{fig:hilbert128}{{4.1}{16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Primes aligned to a 128 x 128 Hilbert curve.}}{16}}
+\newlabel{fig:ulamprobs}{{4.1}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Probabilities within the Ulam spiral.}}{17}}
+\newlabel{fig:hilbertprobs}{{4.1}{18}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Probabilities within the the Hilbert curve.}}{18}}
+\newlabel{fig:ncurveprobs}{{4.1}{19}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Probabilities within the the N curve.}}{19}}
 \citation{gprof}
-\newlabel{fig:alltime}{{4.1}{18}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Performance of the serial program.}}{18}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Sequencial execution}{18}}
-\newlabel{sec:seq_ex}{{4.2}{18}}
 \gdef \LT@i {\LT@entry 
     {1}{38.24994pt}\LT@entry 
     {1}{64.49986pt}\LT@entry 
@@ -102,24 +96,30 @@
     {1}{43.49992pt}\LT@entry 
     {1}{43.49992pt}\LT@entry 
     {1}{69.74985pt}}
-\newlabel{fig:gprofoutput}{{4.2}{19}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Gprof output for the serial version.}}{19}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Parallel execution}{20}}
-\newlabel{sec:par_ex}{{4.3}{20}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Comparison}{20}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Program usage}{20}}
-\newlabel{sec:usage}{{5}{20}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}The git repository}{20}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{20}}
-\newlabel{sec:conclusion}{{6}{20}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Prime number alignement}{20}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}}{20}}
+\newlabel{fig:alltime}{{4.1}{20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Performance of the serial program.}}{20}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Sequential execution}{20}}
+\newlabel{sec:seq_ex}{{4.2}{20}}
+\newlabel{fig:gprofoutput}{{4.2}{21}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Gprof output for the serial version.}}{21}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Parallel execution}{22}}
+\newlabel{sec:par_ex}{{4.3}{22}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Comparison}{22}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Program usage}{22}}
+\newlabel{sec:usage}{{5}{22}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}The git repository}{22}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{22}}
+\newlabel{sec:conclusion}{{6}{22}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}}{22}}
+\bibstyle{alpha}
 \bibdata{bib}
-\bibcite{primeisp}{AKS02}
 \bibcite{PTC}{AMP{$^{+}$}08}
+\bibcite{image}{BB07}
 \bibcite{BS08}{BCC{$^{+}$}08}
 \bibcite{gprof}{GKM82}
 \bibcite{MRVer}{HACB}
 \bibcite{self}{Qui10}
 \bibcite{MRPT}{Rab80}
-\bibstyle{alpha}
+\bibcite{zahlentheorie}{RS07}
+\bibcite{cellguide}{Sca08}
+\bibcite{bmp}{Sup05}
