@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.6.3)  15 AUG 2010 14:49
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.6.3)  15 AUG 2010 18:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -293,44 +293,44 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 \MPnumerator=\count119
 \everyMPtoPDFconversion=\toks27
 )
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 31.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 34.
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 31.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 34.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 31.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 34.
 
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 31.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 34.
 
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 31.
+(Font)              <12> on input line 34.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 31.
+(Font)              <8> on input line 34.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 31.
-LaTeX Font Info:    Try loading font information for U+lasy on input line 31.
+(Font)              <6> on input line 34.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 34.
 
 (/usr/share/texmf-texlive/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 31.
+LaTeX Font Info:    Try loading font information for U+msa on input line 34.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 31.
+LaTeX Font Info:    Try loading font information for U+msb on input line 34.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -349,15 +349,20 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [2] (./introduction.tex
-<graphics/ulam_spiral_numbers.png, id=13, 266.9975pt x 252.945pt>
+ [1] (./main.lof)
+\tf@lof=\write5
+\openout5 = `main.lof'.
+
+ [2]
+(./introduction.tex
+<graphics/ulam_spiral_numbers.png, id=18, 266.9975pt x 252.945pt>
 File: graphics/ulam_spiral_numbers.png Graphic file (type png)
 
 <use graphics/ulam_spiral_numbers.png>
-<graphics/ulam251.png, id=15, 251.94125pt x 251.94125pt>
+<graphics/ulam251.png, id=20, 251.94125pt x 251.94125pt>
 File: graphics/ulam251.png Graphic file (type png)
 
-<use graphics/ulam251.png> [3 <./graphics/ulam_spiral_numbers.png> <./graphics/
+<use graphics/ulam251.png> [1 <./graphics/ulam_spiral_numbers.png> <./graphics/
 ulam251.png (PNG copy)>]
 LaTeX Font Info:    Try loading font information for OMS+lmr on input line 42.
  (/usr/share/texmf/tex/latex/lm/omslmr.fd
@@ -366,51 +371,51 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 42.
 )
-(./design.tex [4] [5] [6] [7] [8]
-<graphics/seqflow.png, id=43, 216.81pt x 361.35pt>
+(./design.tex [2] [3] [4] [5] [6]
+<graphics/seqflow.png, id=48, 216.81pt x 361.35pt>
 File: graphics/seqflow.png Graphic file (type png)
  <use graphics/seqflow.png>
-<graphics/parflow.png, id=44, 216.81pt x 361.35pt>
+<graphics/parflow.png, id=49, 216.81pt x 361.35pt>
 File: graphics/parflow.png Graphic file (type png)
  <use graphics/parflow.png>
-[9 <./graphics/seqflow.png (PNG copy)> <./graphics/parflow.png (PNG copy)>])
-(./implementation.tex [10]
+[7 <./graphics/seqflow.png (PNG copy)> <./graphics/parflow.png (PNG copy)>])
+(./implementation.tex [8]
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 17.
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [11]
-<graphics/hilbert_curve.png, id=55, 298.86656pt x 127.97812pt>
+) [9]
+<graphics/hilbert_curve.png, id=60, 298.86656pt x 127.97812pt>
 File: graphics/hilbert_curve.png Graphic file (type png)
 
-<use graphics/hilbert_curve.png> [12 <./graphics/hilbert_curve.png>]
-<graphics/hilbertalgorithm.png, id=60, 284.56313pt x 255.95625pt>
+<use graphics/hilbert_curve.png> [10 <./graphics/hilbert_curve.png>]
+<graphics/hilbertalgorithm.png, id=66, 284.56313pt x 255.95625pt>
 File: graphics/hilbertalgorithm.png Graphic file (type png)
 
-<use graphics/hilbertalgorithm.png> [13 <./graphics/hilbertalgorithm.png (PNG c
-opy)>] [14] [15]) (./results.tex
-<graphics/ncurve243.png, id=71, 243.91125pt x 243.91125pt>
+<use graphics/hilbertalgorithm.png> [11 <./graphics/hilbertalgorithm.png (PNG c
+opy)>] [12] [13]) (./results.tex
+<graphics/ncurve243.png, id=76, 243.91125pt x 243.91125pt>
 File: graphics/ncurve243.png Graphic file (type png)
 
 <use graphics/ncurve243.png>
-<graphics/hilbert128.png, id=72, 128.48pt x 128.48pt>
+<graphics/hilbert128.png, id=77, 128.48pt x 128.48pt>
 File: graphics/hilbert128.png Graphic file (type png)
 
-<use graphics/hilbert128.png> [16 <./graphics/ncurve243.png (PNG copy)> <./grap
+<use graphics/hilbert128.png> [14 <./graphics/ncurve243.png (PNG copy)> <./grap
 hics/hilbert128.png (PNG copy)>]
-<graphics/ulamprobs.png, id=76, 341.02406pt x 227.34938pt>
+<graphics/ulamprobs.png, id=81, 341.02406pt x 227.34938pt>
 File: graphics/ulamprobs.png Graphic file (type png)
 
 <use graphics/ulamprobs.png>
-<graphics/hilbertprobs.png, id=77, 341.02406pt x 227.34938pt>
+<graphics/hilbertprobs.png, id=82, 341.02406pt x 227.34938pt>
 File: graphics/hilbertprobs.png Graphic file (type png)
 
-<use graphics/hilbertprobs.png> [17 <./graphics/ulamprobs.png (PNG copy)>]
-<graphics/ncurveprobs.png, id=81, 341.02406pt x 227.34938pt>
+<use graphics/hilbertprobs.png> [15 <./graphics/ulamprobs.png (PNG copy)>]
+<graphics/ncurveprobs.png, id=86, 341.02406pt x 227.34938pt>
 File: graphics/ncurveprobs.png Graphic file (type png)
 
-<use graphics/ncurveprobs.png> [18 <./graphics/hilbertprobs.png (PNG copy)> <./
+<use graphics/ncurveprobs.png> [16 <./graphics/hilbertprobs.png (PNG copy)> <./
 graphics/ncurveprobs.png (PNG copy)>]
-<graphics/alltime.png, id=85, 341.02406pt x 227.34938pt>
+<graphics/alltime.png, id=91, 341.02406pt x 227.34938pt>
 File: graphics/alltime.png Graphic file (type png)
 
 <use graphics/alltime.png>
@@ -428,31 +433,32 @@ Overfull \hbox (17.45943pt too wide) in paragraph at lines 82--82
  [] 
  []
 
-[19 <./graphics/alltime.png>] [20]) (./programusage.tex) (./conclusion.tex)
-[21] (./main.bbl) [22] (./main.aux) ) 
+[17 <./graphics/alltime.png>] [18]) (./programusage.tex) (./conclusion.tex
+[19]) [20] (./main.bbl) [21] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 3724 strings out of 495061
- 47407 string characters out of 1182622
- 116439 words of memory out of 3000000
- 6770 multiletter control sequences out of 15000+50000
- 54906 words of font info for 61 fonts, out of 3000000 for 9000
+ 3732 strings out of 495061
+ 47485 string characters out of 1182622
+ 116435 words of memory out of 3000000
+ 6773 multiletter control sequences out of 15000+50000
+ 63914 words of font info for 64 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  30i,9n,25p,1207b,393s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec
-.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts
-/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</us
-r/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/sha
-re/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/l
-m/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf
-/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.p
-fb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/t
-ype1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></u
-sr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf-texlive/fonts
-/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (22 pages, 585565 bytes).
+{/usr/share/texmf/fonts/enc/dvips/lm
+/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf
+/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.en
+c}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx9.pfb></us
+r/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/pu
+blic/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/
+lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fo
+nts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb
+></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr
+/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on main.pdf (24 pages, 638217 bytes).
 PDF statistics:
- 145 PDF objects out of 1000 (max. 8388607)
+ 159 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

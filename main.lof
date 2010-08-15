@@ -1,0 +1,14 @@
+\select@language {UKenglish}
+\contentsline {figure}{\numberline {1}{\ignorespaces The Ulam Spiral center.}}{1}
+\contentsline {figure}{\numberline {2}{\ignorespaces A 251 x 251 Ulam spiral.}}{1}
+\contentsline {figure}{\numberline {3}{\ignorespaces Control flow of the sequential version.}}{7}
+\contentsline {figure}{\numberline {4}{\ignorespaces Control flow of the parallel version.}}{7}
+\contentsline {figure}{\numberline {5}{\ignorespaces Three Iteration of the Hilbert curve.}}{10}
+\contentsline {figure}{\numberline {6}{\ignorespaces Two Iteration of the Hilbert curve grammar in tree form.}}{11}
+\contentsline {figure}{\numberline {7}{\ignorespaces Primes aligned on a 241 x 241 N curve.}}{14}
+\contentsline {figure}{\numberline {8}{\ignorespaces Primes aligned to a 128 x 128 Hilbert curve.}}{14}
+\contentsline {figure}{\numberline {9}{\ignorespaces Probabilities within the Ulam spiral.}}{15}
+\contentsline {figure}{\numberline {10}{\ignorespaces Probabilities within the the Hilbert curve.}}{16}
+\contentsline {figure}{\numberline {11}{\ignorespaces Probabilities within the the N curve.}}{16}
+\contentsline {figure}{\numberline {12}{\ignorespaces Performance of the serial program.}}{17}
+\contentsline {figure}{\numberline {13}{\ignorespaces Gprof output of the serial version.}}{18}

@@ -79,7 +79,7 @@ Each sample counts as 0.01 seconds.
   0.00&      8.19&     0.00&        1&     0.00&     0.00&  bmp\_free\_co\\%lors
   0.00&      8.19&     0.00&        1&     0.00&     0.00&  bmp\_free\_pi\\%xels
 %CALL: 250, 600, 2100, 5250 - all algorithms, no file safe
-\end{longtable}}{fig:gprofoutput}{Gprof output for the serial version.}
+\end{longtable}}{fig:gprofoutput}{Gprof output of the serial version.}
 
 Important information from this is that the two of the three alignment algorithms \emph{spiral} and \emph{hilbert} take approximately the same time where \emph{ncurve} is faster. Also the four vector probability functions \emph{prob0deg} - \emph{prob135deg} take some time where \emph{prob90deg} is faster than the others. The time spent in memory allocation \emph{malloc} is reasonable but may be optimized in the parallel version. This is taken into account especially with the two dimensional arrays as described in section \ref{sec:paralleldesign}.
 

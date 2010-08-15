@@ -83,9 +83,9 @@ At first, the input parameters are checked if they can be transformed to correct
 The invoking parameters are:
 
 \begin{enumerate}
-   \item a string\\ which sets the path and filename where the output of the program shall be stored
-   \item a positive integer\\ that is a reference point to determine the size of the generated image
-   \item a positive natural number to base 10\\ that sets the first value for the primality test
+   \item A string\\ which sets the path and filename where the output of the program shall be. stored
+   \item A positive integer\\ that is a reference point to determine the size of the generated image.
+   \item A positive natural number to base 10\\ that sets the first value for the primality test.
 \end{enumerate}
 
 Now, the second argument is transformed to the actual size the chosen algorithm can compute and corresponds to the nearest number that matches the algorithms scaling criteria which are defined as follows with $n$ as a positive number:
@@ -118,7 +118,7 @@ The spreading of single alignment algorithms to single SPEs also has the advanta
 
 In the next step - the computation of the probabilities - is parallelized with the method of data splitting. To get a most precise result, the probability is stored as a fraction. The nominator and denominator are sequencially increased which is a very quick and efficient computation.
 
-There are two method how the vector can be assembled. Either the PPU prearranges the array or the SPE computes for itself where to get the single values that form the vector.  The offset of the pixel data structure has to be studied carefully but can be done in parallel at the SPEs. This point is discussed in more detail at section \ref{sec:2darray}. The second approach is more complex to implement and I suppose it would be the more efficient way to do. This decision of course has to be determined by profiling and testing.
+There are two method how the vector can be assembled. Either the PPU prearranges the array or the SPE computes for itself where to get the single values that form the vector.  The offset of the pixel data structure has to be studied carefully but can be done in parallel at the SPEs. This is discussed in more detail in section \ref{sec:2darray}. The second approach is more complex to implement and I suppose it would be the more efficient way to do. This decision of course has to be determined by profiling and testing.
 
 Some points of the parallelization aspect have to be experienced live to value their impact on the software performance. Only experiences with the hard- and software can reveal bottlenecks and other problems with data alignment. These aspects are described in the section \ref{sec:par_imp}.
 

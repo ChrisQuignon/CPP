@@ -20,8 +20,11 @@
 \include{includes}
 
 \begin{document}
+\begin{titlepage}
+
+
 \title{%Cell Processor Programming\\
-	Prime number alignments donducted with a Cell processor}
+	\Huge Software for the Cell processor\bigskip\\ \Large Patterns in aligned prime numbers\\}
 \author{Christophe Quignon}
 \date{Otto-Friedrich University of Bamberg\\
 Software Technologies Research Group\\
@@ -29,15 +32,19 @@ Software Technologies Research Group\\
 \today}
 
 \maketitle
-
-%\begin{abstract} 
-%\end{abstract}
-
-\noindent
-
+\vskip 6.5 cm
+\begin{abstract}
+This report depicts the design and implementation process of a software that exploits the Cell processor architecture. The theme of the software is the alignment of prime numbers in a two dimensional space, similar to the Ulam spiral. To locate and describe the difference between parallel and serial software, both versions were designed, but only the serial version was implemented successfully.
+\end{abstract}
+\thispagestyle{empty}
 \newpage
 \tableofcontents
+\pagenumbering{Roman}
 \newpage
+\listoffigures
+\newpage
+\end{titlepage}
+\pagenumbering{arabic}
 \input{introduction}
 \input{design}
 \input{implementation}
@@ -46,10 +53,10 @@ Software Technologies Research Group\\
 \input{conclusion}
 %\bibliographystyle{plain}
 %epilogue
+
 \newpage
 \bibliographystyle{alpha}
 \bibliography{bib}
-
 
    
 \end{document}
