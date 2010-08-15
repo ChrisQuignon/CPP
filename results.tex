@@ -1,10 +1,10 @@
 \section{Experimental Results}
 \label{sec:results}
-The results of the project and the topic it had are presented here. At first i will point to the outcome of the meta topic of prime number alignment. Afterward i will conclude the observations of the serial program which was used to design the parallel version. This is concluded in the last section and sadly has to turn out short in lack of a proper implementation.
+The results of the project and the topic it had are presented here. At first I will point to the outcome of the meta topic of prime number alignment. Afterward I will conclude the observations of the serial program which was used to design the parallel version. This is concluded in the last section and sadly has to turn out short in lack of a proper implementation.
 
 \subsection{Prime number probability}
 \label{sec:resprob}
-As a byproduct of this project, some data about the probability of prime numbers on vectors in space filling curves was produced. The discoveries shall be just presented and not discussed in detail. This will be the task of others. At first i present a medium size image for every alignment algorithm implemented to give a visual idea.
+As a byproduct of this project, some data about the probability of prime numbers on vectors in space filling curves was produced. I will only present the discoveries and not discuss them in detail. At first I present a medium size image for every alignment algorithm implemented to give a visual idea.
 \begin{figure}[H]
 \begin{minipage}[t]{0.475\textwidth}
 \centering
@@ -18,23 +18,23 @@ As a byproduct of this project, some data about the probability of prime numbers
 \end{figure}
 The images are produced with the software. The Hilbert and the N curve start at the upper left corner the Ulam spiral in the middle. The calling parameters were 250 for the size, which lead to the given actual sizes and 1 for the initial prime number. The image of the Ulam spiral can be seen in figure \ref{fig:ulam251}. All images have in common that they have a higher prime number density at the alignment algorithm origin. This is because of the high prime number density at small numbers. The N curve as well as the Ulam spiral reveals visible lines.
 
-The N curve image clearly reveals vertical lines which in fact are "empty lines" where no prime number can be found. I suppose this is because of the very nature of the N curve which traverses the space not from a corner but in horizontal lines. The distance between to points does not correspond with a small number difference as it is case with the other two space filling curves.
+The N curve image clearly reveals vertical lines which in fact are "empty lines" where no prime number can be found. I suppose this is because of the very nature of the N curve which traverses the space not from a corner but in horizontal lines. The distance between two points does not correspond with a small number difference as it is the case with the other two space filling curves.
 
 In all three images a clear distinction between the skew and the rectangular vector can be made. The rectangular vectors have a lower average probability and a smaller range. This might be a systematic appearance or an accordance of the three alignment algorithm which can not be assessed here.
 
-As seen on these images, we expect three different outcomes for the probabilistic interpretation of these images. The order of the probabilities is irrelevant. We do not seek for dependencies between to flanking vectors. Therefore a nominal scale is chosen. As stated before, the values at the very left and very right are not relevant and therefore the horizontal an vertical vectors are centered. Their size is constant and they do not have small nominators. Even if the exact point and values can not be retrieved by this representation, for the short interpretation one can get a good idea about the situation.
+As seen on these images, we expect three different outcomes for the probabilistic interpretation of these images. The order of the probabilities is irrelevant. We do not seek for dependencies between two flanking vectors. Therefore a nominal scale is chosen. As stated before, the values at the very left and very right are not relevant and therefore the horizontal an vertical vectors are centered. Their size is constant and they do not have small nominators. Even if the exact point and values can not be retrieved by this representation, for the short interpretation one can get a good idea about the situation.
 
 \graphic{ulamprobs}{scale=1}{Probabilities within the Ulam spiral.}
-The Ulam spiral holds no new information. It is used as a reference to the other two images. The lines one can see in the image are the high striking values above 25\%. Besides these values the distribution is quite homogeneous with a large range rang of appearing percentage values. In larger pictures some lines appear to be horizontal an vertical. These lines are more likely to appear in the center. This can also be confirmed in the probabilistic analysis.
+The Ulam spiral holds no new information. It is used as a reference to the other two images. The lines one can see in the image are the high striking values above 25\%. Besides these values, the distribution is quite homogeneous with a large range of appearing percentage values. In larger pictures some lines appear to be horizontal an vertical. These lines are more likely to appear in the center. This can also be confirmed in the probabilistic analysis.
 
 \graphic{hilbertprobs}{scale=1}{Probabilities within the the Hilbert curve.}
-The image of the Hilbert reveals no prominent lines. The probability analysis also is quite homogeneous but the range of found percentage values is more dense. No peeks in any direction here simply means no lines in the image.
+The image of the Hilbert curve reveals no prominent lines. The probability analysis also is quite homogeneous but the range of found percentage values is more dense. No peeks in any direction here simply means no lines in the image.
 
 \graphic{ncurveprobs}{scale=1}{Probabilities within the the N curve.}
 The probabilistic distribution of the N curve is quite similar to the one of the Hilbert Curve. Its density is a little lower, but there are no extreme values in the middle.
 
 The empty lines mentioned above are not very obvious in the distribution graph. They are in fact excluded for surveyance reasons. On all graphs there are values of zero and they are in fact too much to plot in a meaningful way.
-The only way to recognize this is the comparison of the plotted points in the Ulam spiral and the N curve. The Ulam spiral has an actual size of 251 x 251 px and the N curve is 243 x 243 px. Therefore both probabilistic distribution should have the same amount of plotted spots. However the Ulam spiral seems to have a lot more. The difference of plotted spots is roughly the amount of empty vectors in the N curve.
+The only way to recognize this is the comparison of the plotted points in the Ulam spiral and the N curve. The Ulam spiral has an actual size of 251 x 251 px and the N curve is 243 x 243 px. Therefore both probabilistic distributions should have the same amount of plotted spots. However the Ulam spiral seems to have a lot more. The difference of plotted spots is roughly the amount of empty vectors in the N curve.
 
 In all images the higher prime number density can be identfied as a peak of probabilities. The Ulam spiral peak in the middle whereas the N curve and the hilbert curve peak at the right side.
 
@@ -81,9 +81,9 @@ Each sample counts as 0.01 seconds.
 %CALL: 250, 600, 2100, 5250 - all algorithms, no file safe
 \end{longtable}}{fig:gprofoutput}{Gprof output for the serial version.}
 
-Noteworthy information from this is that the two of the three alignment algorithms \emph{spiral} and \emph{hilbert} take approximate the same time where \emph{ncurve} is faster. Also the four vector probability functions \emph{prob0deg} - \emph{prob135deg} take some time where \emph{prob90deg} is faster than the others. The time spend in memory allocation \emph{malloc} is reasonable but may be optimized in the parallel version. This is taken in account especially with the two dimensional arrays as described in section \ref{sec:paralleldesign}.
+Important information from this is that the two of the three alignment algorithms \emph{spiral} and \emph{hilbert} take approximately the same time where \emph{ncurve} is faster. Also the four vector probability functions \emph{prob0deg} - \emph{prob135deg} take some time where \emph{prob90deg} is faster than the others. The time spent in memory allocation \emph{malloc} is reasonable but may be optimized in the parallel version. This is taken into account especially with the two dimensional arrays as described in section \ref{sec:paralleldesign}.
 
-Less expected were the functions \emph{bmp\_get\_hei[ght]} and \emph{bmp\_set\_pix[el]}. A look into the \emph{libbmp} revealed that these function were dependently to \emph{markprime} which is called to set prime pixels white. Whenever a pixel is set the height and width of the bmp is retrieved to navigate to the pixels position. This could be optimized by rewriting the \emph{libbmp} but was discarded in respect to the projects scope.
+Less expected were the functions \emph{bmp\_get\_hei[ght]} and \emph{bmp\_set\_pix[el]}. A look into the \emph{libbmp} revealed that these functions were dependentl to \emph{markprime} which is called to set prime pixels white. Whenever a pixel is set, the height and width of the bmp is retrieved to navigate to the pixels position. This could be optimized by rewriting the \emph{libbmp} but was discarded in respect to the projects scope.
 
 \subsection{Parallel execution}
 \label{sec:par_ex}

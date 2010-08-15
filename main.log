@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.6.3)  14 AUG 2010 22:59
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.6.3)  15 AUG 2010 14:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -350,11 +350,6 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \openout4 = `main.toc'.
 
  [2] (./introduction.tex
-Overfull \hbox (7.8053pt too wide) in paragraph at lines 7--8
-\T1/lmr/m/n/10 this func-tion can not ex-ist, maybe this ques-tion is not decid
-able.$[]$ $\OT1/lmr/m/n/10 2[] \OMS/lmsy/m/n/10 ^^@
- []
-
 <graphics/ulam_spiral_numbers.png, id=13, 266.9975pt x 252.945pt>
 File: graphics/ulam_spiral_numbers.png Graphic file (type png)
 
@@ -388,11 +383,11 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 File: graphics/hilbert_curve.png Graphic file (type png)
 
 <use graphics/hilbert_curve.png> [12 <./graphics/hilbert_curve.png>]
-<graphics/hilbertalgorithm.png, id=59, 284.56313pt x 255.95625pt>
+<graphics/hilbertalgorithm.png, id=60, 284.56313pt x 255.95625pt>
 File: graphics/hilbertalgorithm.png Graphic file (type png)
 
-<use graphics/hilbertalgorithm.png> [13 <./graphics/hilbertalgorithm.png>]
-[14] [15]) (./results.tex
+<use graphics/hilbertalgorithm.png> [13 <./graphics/hilbertalgorithm.png (PNG c
+opy)>] [14] [15]) (./results.tex
 <graphics/ncurve243.png, id=71, 243.91125pt x 243.91125pt>
 File: graphics/ncurve243.png Graphic file (type png)
 
@@ -405,19 +400,20 @@ hics/hilbert128.png (PNG copy)>]
 <graphics/ulamprobs.png, id=76, 341.02406pt x 227.34938pt>
 File: graphics/ulamprobs.png Graphic file (type png)
 
-<use graphics/ulamprobs.png> [17 <./graphics/ulamprobs.png (PNG copy)>]
-<graphics/hilbertprobs.png, id=80, 341.02406pt x 227.34938pt>
+<use graphics/ulamprobs.png>
+<graphics/hilbertprobs.png, id=77, 341.02406pt x 227.34938pt>
 File: graphics/hilbertprobs.png Graphic file (type png)
 
-<use graphics/hilbertprobs.png>
+<use graphics/hilbertprobs.png> [17 <./graphics/ulamprobs.png (PNG copy)>]
 <graphics/ncurveprobs.png, id=81, 341.02406pt x 227.34938pt>
 File: graphics/ncurveprobs.png Graphic file (type png)
 
-<use graphics/ncurveprobs.png> [18 <./graphics/hilbertprobs.png (PNG copy)>]
+<use graphics/ncurveprobs.png> [18 <./graphics/hilbertprobs.png (PNG copy)> <./
+graphics/ncurveprobs.png (PNG copy)>]
 <graphics/alltime.png, id=85, 341.02406pt x 227.34938pt>
 File: graphics/alltime.png Graphic file (type png)
 
-<use graphics/alltime.png> [19 <./graphics/ncurveprobs.png (PNG copy)>]
+<use graphics/alltime.png>
 Overfull \hbox (6.58986pt too wide) in alignment at lines 82--82
  [] [] [] [] [] [] [] 
  []
@@ -432,16 +428,16 @@ Overfull \hbox (17.45943pt too wide) in paragraph at lines 82--82
  [] 
  []
 
-[20 <./graphics/alltime.png>] [21]) (./programusage.tex) (./conclusion.tex)
-[22] (./main.bbl) [23] (./main.aux) ) 
+[19 <./graphics/alltime.png>] [20]) (./programusage.tex) (./conclusion.tex)
+[21] (./main.bbl) [22] (./main.aux) ) 
 Here is how much of TeX's memory you used:
  3724 strings out of 495061
  47407 string characters out of 1182622
- 115464 words of memory out of 3000000
+ 116439 words of memory out of 3000000
  6770 multiletter control sequences out of 15000+50000
  54906 words of font info for 61 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 30i,9n,25p,1206b,393s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,9n,25p,1207b,393s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec
 .enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts
 /enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</us
@@ -454,9 +450,9 @@ fb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf-texlive/fonts
 /type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (23 pages, 581754 bytes).
+Output written on main.pdf (22 pages, 585565 bytes).
 PDF statistics:
- 148 PDF objects out of 1000 (max. 8388607)
+ 145 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

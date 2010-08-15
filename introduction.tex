@@ -4,12 +4,12 @@
 \subsection{Motivation}
 The \emph{Electronic Frontier Foundation} awarded \$100,000 for the first discovered prime number with at least 10,000,000 digits and the Great Internet Mersenne Prime Search ("GIMPS") won this prize in October 2009. \$100,000 and \$250,000 are awarded to the discovery of the first prime numbers with 100,000,000 and 1,000,000,000 decimal digits.
 
-Euclid has proven that there are infinitely many prime numbers, but there is no function which creates all possible prime numbers in constant time. Maybe this function can not exist, maybe this question is not decidable.$^{\cite{zahlentheorie}}$ $2^{43,112,609}-1$ is the largest currently known prime number. Its discovery consumed 12 years of continuous computing time with 29 trillion calculations per second and lead to 12,978,189 digits in decimal notation. This shows that computing with prime numbers is not trivial. Their size easily exceeds normal integer limitations and the algorithms to find and prove them scale very bad.
+Euclid proved that there is an infinite number of primes, but there is no function which creates all possible prime numbers in constant time. Maybe this function can not exist, maybe this question is not decidable.$^{\cite{zahlentheorie}}$ $2^{43,112,609}-1$ is the largest currently known prime number. Its discovery took 12 years of continuous computing time with 29 trillion calculations per second and lead to 12,978,189 digits in decimal notation. This shows that computing with prime numbers is not trivial. Their size easily exceeds normal integer limitations and the algorithms to find and prove them scale very bad.
 
-The reason behind this monetary appeal is the unsolved question if prime numbers follow a specific pattern to which they appear. This is one of the great questions of number theory and up to a few years ago it was so solely. The long computation time of prime numbers and integer factorization led to their use as the core of every encryption. So the prime numbers also became of interest to computer science.
+The reason behind this monetary appeal is the unsolved question if prime numbers follow a specific pattern in which they appear. This is one of the great questions of number theory and until a few years ago it was just this. The long computation time of prime numbers and integer factorization led to their use as the core of every encryption. So prime numbers also became of interest to computer science.
 
 \subsection{Background}
-One big discovery towards a pattern of prime numbers is the Ulam Spiral. In 1963 Stanislav Ulam was bored and started marking prime numbers on a square spiral as in \ref{fig:ulam_spiral_numbers}. \ref{fig:ulam251} show a 251 by 251 Ulam spiral. At angles of 45$^\circ$ lines evolved. Up to now, it is not clear why these lines appear, but many people started their own search and came up with variation of the Ulam Spiral. The starting number may vary, the process was applied iteratively and other ways of illustration were chosen.Mostly in the web the Ulam spiral was examined without any success.
+One big discovery towards a pattern of prime numbers is the Ulam Spiral. In 1963, Stanislav Ulam marked prime numbers on a square spiral as in figure \ref{fig:ulam_spiral_numbers}. Figure  ~\ref{fig:ulam251} shows a 251 by 251 Ulam spiral. At angles of 45$^\circ$ lines evolve. Up to now, it is not clear why these lines appear, but many people started their own search and came up with variations of the Ulam Spiral. The starting number may vary, the process was applied iteratively and other ways of illustration were chosen. Mostly in the web, the Ulam spiral was examined without any success.
 
 \begin{figure}[H]
 \begin{minipage}[t]{0.475\textwidth}
@@ -23,14 +23,14 @@ One big discovery towards a pattern of prime numbers is the Ulam Spiral. In 1963
 \end{minipage}
 \end{figure}
 
-To gain profound starting thesis for a the search of prime number patterns, the Ulam spiral has to be varied and scaled. This scaling, the alignment patterns and the primality test is a challenge so complex and time consuming that it will profit from modern parall processor architectures.
+To gain a profound starting thesis for a the search of prime number patterns, the Ulam spiral has to be varied and scaled. This scaling, the alignment patterns and the primality test is a challenge so complex and time consuming that it will profit from modern parall processor architectures.
  
 \subsection{Goals}
 
-This project aims for an implementation of several algorithms that align prime numbers to a space filling curve similar to the Ulam spiral. The images then shall be scanned for patterns and the information about these patterns shall be put out. The software is to be implemented in a serial and in a parallel fashion. 
-Besides this meta topic, the project should give opportunity to work with the Cell processor architecture in a Playstation 3 (PS3). This report will reflect the experienced made and give place to vindicate and criticize them. This will be done in the chapter \ref{sec:design} "Design" and section \ref{sec:implementation} "Implementation". To enable other persons to use and refine the project, in section \ref{sec:usage} "Program usage" all necessary information are given.
+This project aims for an implementation of several algorithms that align prime numbers to a space filling curve similar to the Ulam spiral. The images then will be scanned for patterns and the information about these patterns will be put out. The software is to be implemented in a serial and in a parallel fashion. 
+Besides this meta topic, the project should give opportunity to work with the Cell processor architecture in a Playstation 3 (PS3). This report will reflect the experienced made and give space to vindicate and criticize them. This will be done in the chapter \ref{sec:design} "Design" and section \ref{sec:implementation} "Implementation". To enable other persons to use and refine the project, all necessary informations are given in section \ref{sec:usage} "Program usage".
 
-It is not goal to adapt the process of creating the software. This would have to result in a unstructured report that follows the time line of the implementation. The structure is chosen to group distinct aspects of the process by topics. Nonetheless, decision made early in the project had effect on later decisions. I decided to give the reader a chance to recreate these dependencies by following the plenty references between the sections.
+The goal to adapt the process of creating the software. This would have to result in an unstructured report that follows the time line of the implementation. The structure is chosen to group distinct aspects of the process by topics. Nonetheless, decisions made early in the project had effect on later ones. I decided to give the reader a chance to recreate these dependencies by following plenty references between the sections.
 
 Hereafter the formal criteria as set to this project by the project brief are listed. This list will give referrals where the requirements are discussed.
 
@@ -42,7 +42,7 @@ A correct, well implemented and documented software can not be proven in a repor
    \item Parallel pattern detection\\
       The identification of probability vectors within the prime number traversion is discussed in detail in section \ref{sec:pattern}. There I will explain how this identification is designed for the parallel implementation.
    \item Cell processor exploitation
-      The exploitation is mainly discussed in section \ref{sec:paralleldesign} and \ref{sec:par_imp}
+      The exploitation is mainly discussed in sections \ref{sec:paralleldesign} and \ref{sec:par_imp}
 \end{itemize}%enumerate
 
 
