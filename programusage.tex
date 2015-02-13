@@ -1,17 +1,30 @@
 \section{Program usage}
 \label{sec:usage}
 
-To compile and use the program, \emph{gmplib} must be installed. The \emph{libbmp} is already included and an additional installation is not necessary. A makefile for compilation is also available. If the compilation does not work properly, this is where one can see which standard libraries as the \emph{math.h} were also used but not mentioned seperately. This includes the \emph{libspe} and \emph{mfcio} libraries needed for the compilation on the Cell. In addition, \emph{make par} will compile the code and then execute it with sample parameters. The produced output files can be deleted with \emph{make clean}.
+To compile and use the program, \emph{gmplib} must be installed. The \emph{libbmp} is already included and an additional installation is not necessary. A makefile for compilation is also available. If the compilation does not work properly, this is where one can see which standard libraries as the \emph{math.h} were also used but not mentioned separately. This includes the \emph{libspe} and \emph{mfcio} libraries needed for the compilation on the Cell. In addition, \emph{make par} will compile the code and then execute it with sample parameters. The produced output files can be deleted with \emph{make clean}.
 
 The shell script \emph{run.sh} compiles and executes the program to produce the data used in this report. It requires \emph{gprof} to be installed which is not mandatory for the software itself.
 
-To run the program with your own parameters see section \ref{sec:serial_design} to gain information about the invoking parameters.
+To run the program with your own parameters see section \ref{sec:serial_design} to gain information about the invoking parameters. Figure \ref{fig:call} illustrates the typical compiling and invoking commands that compiles the program to \emph{ulam.o}. It invokes the program to store the images to \emph{data/ulam} and saves the fraction output to \emph{data ulam250.out}.
+\boxit{
+\ttfamily
+
+gcc bwbmp.c -pg -lm -lgmp bmpfile.h -o ulam.o\\
+./ulam.o data/ulam 250 1 >  data/ulam250.out
+}{fig:call}{Compilation and invoking example for the serial version}
+
+
+The compiling of the parallel version is more complicated and is not explained in detail nor illustrated. At first, all "subprograms" that will be executed by a SPE have to be compiled. These precompiled files then get compiled into a state that can be executed by the SPE. Both of these steps, as well as the next one are done by the \emph{libspe} library. At last, the main code for the \emph{PPU} is compiled and the files for the SPE are linked in. This file now can be executed.
 
 \subsection{The git repository}
 The implementation of the parallel version has failed. Nonetheless I handed in the \emph{git} repository to you so one can reproduce and understand the difficulties I had during the implementation. To navigate through the repository \emph{git} must be installed. Further information about \emph{git} can best be found at the website \url{http://git-scm.com/}.
 Please note that the process of implementing software is a creative and chaotic process. It was not intended to release the repository. It is not commented very well and most likely not understandable.
 
 The serial version of the program is stored in the branch \emph{serial} in this repository. Makefile and shell script are also included for the serial version. The invoking parameters are the same. 
+
+The parallel version of the program is stored in the branch \emph{handin}, which is the master branch. The shell script, the Makefile are included and the invoking parameters are the same.
+In this branch, the files \emph{ulam\_ppu.c} is the main file that has to be compiled for the PPU. Analog, the files ending \emph{spe} have to be compiled for the SPE. At the moment, the implementation were canceled, the testing and debugging was only concerned with the PPU file and \emph{hilbert\_spe.c}. The other two alignment algorithm were not refined to that degree and do not represent the last point of implementation.
+
 
 %\subsection{subsection}
 %\subsubsection{subsubsection}
